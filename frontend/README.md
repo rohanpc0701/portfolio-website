@@ -68,3 +68,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Environment Variables
+
+Create a `.env` in this folder (do not commit it) using the following template:
+
+```
+REACT_APP_FIREBASE_API_KEY=
+REACT_APP_FIREBASE_AUTH_DOMAIN=
+REACT_APP_FIREBASE_PROJECT_ID=
+REACT_APP_FIREBASE_APP_ID=
+
+# Optional: backend URL for portfolio data
+REACT_APP_BACKEND_URL=
+```
+
+Notes:
+- Never commit real secrets. `.env` is ignored by Git.
+- When deploying, configure these variables in your hosting provider’s dashboard.
