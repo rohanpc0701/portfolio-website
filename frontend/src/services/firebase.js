@@ -32,6 +32,7 @@ if (apiKey && authDomain && projectId && appId) {
   }
 }
 
-export { db };
+const firebaseReady = Boolean(app);
+export { db, app as firebaseApp, firebaseReady };
 
 

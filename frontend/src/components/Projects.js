@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Github, ExternalLink, Calendar, Star, ArrowRight } from 'lucide-react';
 import { portfolioAPI } from '../services/api';
-import '../services/firebase';
+import { firebaseReady } from '../services/firebase';
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'firebase/auth';
 
 const Projects = () => {
@@ -29,11 +29,16 @@ const Projects = () => {
   ]);
 
   useEffect(() => {
-    const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-    });
-    return () => unsubscribe();
+    if (!firebaseReady) return;
+    try {
+      const auth = getAuth();
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        setCurrentUser(user);
+      });
+      return () => unsubscribe();
+    } catch (e) {
+      console.warn('Firebase auth not initialized');
+    }
   }, []);
 
   const handleSignIn = async () => {
@@ -66,7 +71,7 @@ const Projects = () => {
 
   useEffect(() => {
     const fetchProjects = async () => {
-      try {
+    try {
         setLoading(true);
         if (GITHUB_USERNAME) {
           // Fetch directly from GitHub and show on site
@@ -106,8 +111,13 @@ const Projects = () => {
           });
           setProjects(filtered);
         } else {
-          const data = await portfolioAPI.getProjects(selectedCategory);
-          setProjects(data);
+          try {
+            const data = await portfolioAPI.getProjects(selectedCategory);
+            setProjects(data);
+          } catch (e) {
+            console.warn('Backend projects API failed, falling back to empty list');
+            setProjects([]);
+          }
         }
       } catch (error) {
         console.error('Failed to fetch projects:', error);
