@@ -101,7 +101,8 @@ export const portfolioAPI = {
   // Get skills grouped by category
   async getSkills() {
     try {
-      const response = await apiClient.get('/portfolio/skills');
+      // Use a shorter timeout specifically for skills to avoid long spinners
+      const response = await apiClient.get('/portfolio/skills', { timeout: 1500 });
       return response.data;
     } catch (error) {
       console.error('Error fetching skills:', error);

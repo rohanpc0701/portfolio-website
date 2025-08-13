@@ -5,41 +5,47 @@ import { portfolioAPI } from '../services/api';
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('aiMl');
   const [animatedSkills, setAnimatedSkills] = useState(new Set());
-  const [skillsData, setSkillsData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // Show immediately with sensible defaults; update in background when API succeeds
+  const defaultSkills = {
+    languages: [
+      { name: "Python", level: 95, category: "programming" },
+      { name: "JavaScript", level: 90, category: "programming" },
+      { name: "Java", level: 85, category: "programming" }
+    ],
+    frameworks: [
+      { name: "React.js", level: 90, category: "frontend" },
+      { name: "Django", level: 85, category: "backend" },
+      { name: "PyTorch", level: 90, category: "ai-ml" }
+    ],
+    tools: [
+      { name: "Git/GitHub", level: 95, category: "development" },
+      { name: "Docker", level: 80, category: "devops" },
+      { name: "AWS", level: 85, category: "cloud" }
+    ],
+    aiMl: [
+      { name: "Machine Learning", level: 90, category: "core" },
+      { name: "Deep Learning", level: 85, category: "core" },
+      { name: "Large Language Models", level: 95, category: "specialized" }
+    ]
+  };
+  const [skillsData, setSkillsData] = useState(defaultSkills);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchSkills = async () => {
       try {
         const data = await portfolioAPI.getSkills();
-        setSkillsData(data);
+        // Ensure structure is complete before setting
+        setSkillsData({
+          languages: Array.isArray(data?.languages) ? data.languages : defaultSkills.languages,
+          frameworks: Array.isArray(data?.frameworks) ? data.frameworks : defaultSkills.frameworks,
+          tools: Array.isArray(data?.tools) ? data.tools : defaultSkills.tools,
+          aiMl: Array.isArray(data?.aiMl) ? data.aiMl : defaultSkills.aiMl,
+        });
       } catch (error) {
         console.error('Failed to fetch skills:', error);
-        // Fallback data
-        setSkillsData({
-          languages: [
-            { name: "Python", level: 95, category: "programming" },
-            { name: "JavaScript", level: 90, category: "programming" },
-            { name: "Java", level: 85, category: "programming" }
-          ],
-          frameworks: [
-            { name: "React.js", level: 90, category: "frontend" },
-            { name: "Django", level: 85, category: "backend" },
-            { name: "PyTorch", level: 90, category: "ai-ml" }
-          ],
-          tools: [
-            { name: "Git/GitHub", level: 95, category: "development" },
-            { name: "Docker", level: 80, category: "devops" },
-            { name: "AWS", level: 85, category: "cloud" }
-          ],
-          aiMl: [
-            { name: "Machine Learning", level: 90, category: "core" },
-            { name: "Deep Learning", level: 85, category: "core" },
-            { name: "Large Language Models", level: 95, category: "specialized" }
-          ]
-        });
-      } finally {
-        setLoading(false);
+        // Keep showing defaults on error
+        setSkillsData(defaultSkills);
       }
     };
 
@@ -115,17 +121,7 @@ const Skills = () => {
     );
   };
 
-  if (loading) {
-    return (
-      <section id="skills" className="py-20 bg-black">
-        <div className="max-w-6xl mx-auto px-4 lg:px-8">
-          <div className="flex items-center justify-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-400"></div>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  // No blocking spinner; content renders immediately with defaults
 
   return (
     <section id="skills" className="py-20 bg-black">
