@@ -8,21 +8,30 @@
 import { initializeApp, getApps } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
-// Prefer env vars; fallback to provided config if envs are missing
-const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY || 'AIzaSyDgJ30vAptadLVtwwtQjtNZCsBG5djs_kw',
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || 'rohan-portfolio-website.firebaseapp.com',
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || 'rohan-portfolio-website',
-  appId: process.env.REACT_APP_FIREBASE_APP_ID || '1:933158385028:web:d19827eafc52a8583c59d1',
-};
+// Read config strictly from environment; do not hardcode secrets
+const apiKey = process.env.REACT_APP_FIREBASE_API_KEY;
+const authDomain = process.env.REACT_APP_FIREBASE_AUTH_DOMAIN;
+const projectId = process.env.REACT_APP_FIREBASE_PROJECT_ID;
+const appId = process.env.REACT_APP_FIREBASE_APP_ID;
 
 let app;
-if (!getApps().length) {
-  app = initializeApp(firebaseConfig);
+let db = null;
+
+if (apiKey && authDomain && projectId && appId) {
+  const firebaseConfig = { apiKey, authDomain, projectId, appId };
+  if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+  } else {
+    app = getApps()[0];
+  }
+  db = getFirestore(app);
 } else {
-  app = getApps()[0];
+  if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn('Firebase env vars missing; skipping Firebase initialization');
+  }
 }
 
-export const db = getFirestore(app);
+export { db };
 
 
