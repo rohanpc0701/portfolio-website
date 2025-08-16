@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Github, ExternalLink, Calendar, Star, ArrowRight } from 'lucide-react';
 import { portfolioAPI } from '../services/api';
 import { firebaseReady } from '../services/firebase';
+import { thumbnailOverrides } from '../config/projectThumbnails';
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'firebase/auth';
 
 const Projects = () => {
@@ -169,7 +170,8 @@ const Projects = () => {
 
   const mapRepoToProjectCreate = (repo, order) => {
     const owner = repo?.owner?.login || GITHUB_USERNAME;
-    const image = `https://opengraph.githubassets.com/1/${owner}/${repo.name}`;
+    const override = thumbnailOverrides[repo.name];
+    const image = override || `https://opengraph.githubassets.com/1/${owner}/${repo.name}`;
     const tech = Array.isArray(repo.topics) && repo.topics.length > 0
       ? repo.topics
       : (repo.language ? [repo.language] : ['GitHub']);
