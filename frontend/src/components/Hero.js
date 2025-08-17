@@ -128,10 +128,12 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-end">
               <img
                 src={profileImg}
-                alt="Rohan headshot"
+                alt="Headshot of Rohan Praveen Chavan, AI/ML Engineer"
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
+                width="288"
+                height="288"
                 className="w-40 h-40 md:w-72 md:h-72 rounded-full object-cover border border-white/10 shadow-xl ring-2 ring-blue-500/20"
               />
             </div>
