@@ -11,6 +11,35 @@ export const thumbnailOverrides = {
   // Sentimint project (supports common name variants)
   sentimint: '/images/projects/sentimint.jpeg',
   sentmint: '/images/projects/sentimint.jpeg',
+  'Sentimint-AI-Stock-Analyser': '/images/projects/sentimint.jpeg',
+  'sentimint-ai-stock-analyser': '/images/projects/sentimint.jpeg',
+  'Sentimint-AI-Stock-Analyzer': '/images/projects/sentimint.jpeg',
+  'sentimint-ai-stock-analyzer': '/images/projects/sentimint.jpeg',
+  // Trust Drive project (blockchain)
+  'trust-drive': '/images/projects/blockchain.jpg',
+  TrustDrive: '/images/projects/blockchain.jpg',
+  trustdrive: '/images/projects/blockchain.jpg',
 };
+
+// Resolve a thumbnail for a given repo name using flexible matching:
+// 1) Exact key match
+// 2) Case-insensitive key match
+// 3) Partial contains match (case-insensitive)
+export function resolveThumbnailForRepo(repoName) {
+  if (!repoName) return null;
+  if (thumbnailOverrides[repoName]) return thumbnailOverrides[repoName];
+  const lower = String(repoName).toLowerCase();
+  // Case-insensitive exact
+  for (const key of Object.keys(thumbnailOverrides)) {
+    if (key.toLowerCase() === lower) return thumbnailOverrides[key];
+  }
+  // Partial contains
+  for (const key of Object.keys(thumbnailOverrides)) {
+    if (lower.includes(String(key).toLowerCase())) {
+      return thumbnailOverrides[key];
+    }
+  }
+  return null;
+}
 
 
