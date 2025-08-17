@@ -82,11 +82,11 @@ const NetflixLoader = ({ onComplete }) => {
             <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-slide-across-reverse"></div>
           </div>
 
-          {/* Corner accents - larger brackets for better text spacing */}
-          <div className="absolute top-4 left-4 w-44 h-44 border-l-4 border-t-4 border-blue-500 animate-fade-in"></div>
-          <div className="absolute top-4 right-4 w-44 h-44 border-r-4 border-t-4 border-blue-500 animate-fade-in"></div>
-          <div className="absolute bottom-4 left-4 w-44 h-44 border-l-4 border-b-4 border-cyan-500 animate-fade-in"></div>
-          <div className="absolute bottom-4 right-4 w-44 h-44 border-r-4 border-b-4 border-cyan-500 animate-fade-in"></div>
+          {/* Corner accents - much larger brackets to properly frame the text with space */}
+          <div className="absolute top-2 left-2 w-56 h-56 border-l-4 border-t-4 border-blue-500 animate-fade-in"></div>
+          <div className="absolute top-2 right-2 w-56 h-56 border-r-4 border-t-4 border-blue-500 animate-fade-in"></div>
+          <div className="absolute bottom-2 left-2 w-56 h-56 border-l-4 border-b-4 border-cyan-500 animate-fade-in"></div>
+          <div className="absolute bottom-2 right-2 w-56 h-56 border-r-4 border-b-4 border-cyan-500 animate-fade-in"></div>
         </div>
       )}
 
