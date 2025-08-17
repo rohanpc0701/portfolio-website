@@ -43,7 +43,7 @@ EXPERIENCE_DATA = [
         "achievements": [
             "Spearheaded the design of 25+ production-grade TypeSpec models for CDK Repair APIs, reducing schema duplication by 40% and aligning with OpenAPI/YAML specs",
             "Refactored legacy field types and enforced strict naming conventions to improve API type safety, downstream SDK generation, and maintainability",
-            "Engineered a model evaluation pipeline using Vertex AI + Gemini to auto-generate and validate TypeSpec schemas from unstructured input via REST APIs",
+            "Built an evaluation pipeline on Google Cloud (Vertex AI + Gemini) to auto-generate and validate TypeSpec schemas from unstructured input via REST APIs",
             "Resolved critical deployment blockers (auth flows, emulator bugs), enabling seamless cloud-to-local LLM testing; documented workflow in EVALUATION.md adopted org-wide",
             "Streamlined collaboration by driving GitOps best practices (branching, PR reviews, modular refactoring), boosting merge velocity and QA confidence",
             "Implemented CI gates to lint/validate TypeSpec against canonical OpenAPI, cutting PR review time by 35% and eliminating spec drift",

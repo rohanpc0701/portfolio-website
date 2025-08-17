@@ -143,7 +143,7 @@ const Header = () => {
                 Contact
               </button>
                 <a 
-                  href="/Rohan_Resume_Latex.pdf"
+                  href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-blue-400 transition-colors duration-200 font-medium text-left px-4"
@@ -151,29 +151,35 @@ const Header = () => {
                   Resume
                 </a>
               
-              {/* Mobile Social Links */}
+                            {/* Mobile Social Links */}
               <div className="flex items-center space-x-6 px-4 pt-4 border-t border-gray-800">
                 <a
                   href="https://github.com/RohanChavan0701"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-blue-400 transition-colors duration-200"
+                  aria-label="GitHub Profile"
+                  title="View GitHub Profile"
                 >
-                  <Github size={20} />
+                  <Github size={20} aria-hidden="true" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/rohan-chavan-708532200/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-blue-400 transition-colors duration-200"
+                  aria-label="LinkedIn Profile"
+                  title="View LinkedIn Profile"
                 >
-                  <Linkedin size={20} />
+                  <Linkedin size={20} aria-hidden="true" />
                 </a>
                 <a
-                    href="mailto:rohanchavan0701@gmail.com"
+                  href="mailto:rohanchavan0701@gmail.com"
                   className="text-white hover:text-blue-400 transition-colors duration-200"
+                  aria-label="Send Email"
+                  title="Send Email to rohanchavan0701@gmail.com"
                 >
-                  <Mail size={20} />
+                  <Mail size={20} aria-hidden="true" />
                 </a>
               </div>
               

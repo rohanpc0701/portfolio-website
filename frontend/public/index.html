@@ -4,35 +4,29 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <meta name="description" content="Rohan Chavan - AI/ML Engineer Portfolio. Specializing in LLMs, NLP, Computer Vision, and Full-stack Development. View projects, experience, and contact information." />
+        <meta name="description" content="Rohan Chavan — AI/ML Engineer. MS Computer Engineering at Virginia Tech. LLMs, NLP, CV, full-stack, and cloud projects." />
         <meta name="robots" content="index,follow" />
-        <meta property="og:title" content="Rohan Chavan | AI/ML Engineer Portfolio" />
-        <meta property="og:description" content="AI/ML Engineer specializing in LLMs, NLP, full‑stack, and cloud. View projects, experience, and contact information." />
+        <meta property="og:title" content="Rohan Chavan — AI/ML Engineer" />
+        <meta property="og:description" content="MS CE at Virginia Tech. Projects in LLMs, NLP, CV, full-stack, and cloud." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="%PUBLIC_URL%/PXL_20250111_214532171 (2)-min.jpg" />
-        <meta property="og:url" content="https://rohan-chavan.vercel.app" />
+        <meta property="og:url" content="https://rohan-chavan.vercel.app/" />
+        <meta property="og:image" content="/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Rohan Chavan | AI/ML Engineer Portfolio" />
-        <meta name="twitter:description" content="AI/ML Engineer specializing in LLMs, NLP, full‑stack, and cloud." />
-        <meta name="twitter:image" content="%PUBLIC_URL%/PXL_20250111_214532171 (2)-min.jpg" />
+        <meta name="twitter:title" content="Rohan Chavan — AI/ML Engineer" />
+        <meta name="twitter:description" content="MS CE at Virginia Tech. Projects in LLMs, NLP, CV, full-stack, and cloud." />
+        <meta name="twitter:image" content="/og-image.png" />
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "Person",
           "name": "Rohan Praveen Chavan",
           "jobTitle": "AI/ML Engineer",
-          "url": "https://rohan-chavan.vercel.app",
           "email": "mailto:rohanchavan0701@gmail.com",
+          "url": "https://rohan-chavan.vercel.app/",
           "sameAs": [
             "https://github.com/RohanChavan0701",
             "https://www.linkedin.com/in/rohan-chavan-708532200/"
-          ],
-          "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "Virginia Tech",
-            "degree": "MS Computer Engineering"
-          },
-          "knowsAbout": ["Machine Learning", "Natural Language Processing", "Computer Vision", "Full-stack Development", "Cloud Computing"]
+          ]
         }
         </script>
         <script type="application/ld+json">
@@ -205,12 +199,91 @@
                     text-align: center;
                 }
                 .alert strong { color: #60a5fa; }
+                
+                /* Project context styling */
+                .project-context {
+                    font-style: italic;
+                    color: #9ca3af;
+                    margin: 0.5rem 0;
+                    font-size: 0.9rem;
+                    border-left: 3px solid #60a5fa;
+                    padding-left: 0.75rem;
+                }
+                
+                /* CTA section styling */
+                .cta-section {
+                    margin-top: 2rem;
+                    padding-top: 1.5rem;
+                    border-top: 1px solid #374151;
+                    text-align: center;
+                }
+                
+                .cta-section h3 {
+                    margin-bottom: 1rem;
+                    color: #60a5fa;
+                }
+                
+                .cta-buttons {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+                    align-items: center;
+                }
+                
+                .cta-button {
+                    display: inline-block;
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    transition: all 0.2s ease;
+                    min-width: 200px;
+                    text-align: center;
+                }
+                
+                .cta-button.primary {
+                    background: #60a5fa;
+                    color: white;
+                    border: 2px solid #60a5fa;
+                }
+                
+                .cta-button.primary:hover {
+                    background: #3b82f6;
+                    border-color: #3b82f6;
+                    transform: translateY(-1px);
+                }
+                
+                .cta-button.secondary {
+                    background: transparent;
+                    color: #60a5fa;
+                    border: 2px solid #60a5fa;
+                }
+                
+                .cta-button.secondary:hover {
+                    background: rgba(96, 165, 250, 0.1);
+                    transform: translateY(-1px);
+                }
+                
+                .cta-button.tertiary {
+                    background: transparent;
+                    color: #9ca3af;
+                    border: 2px solid #6b7280;
+                }
+                
+                .cta-button.tertiary:hover {
+                    background: rgba(107, 114, 128, 0.1);
+                    color: #d1d5db;
+                    transform: translateY(-1px);
+                }
+                
                 @media (max-width: 768px) {
                     .wrap { padding: 1rem; }
                     .header h1 { font-size: 2rem; }
                     .card { padding: 1.5rem; }
                     .project-grid { grid-template-columns: 1fr; }
                     .stats { grid-template-columns: repeat(2, 1fr); }
+                    .cta-buttons { gap: 0.5rem; }
+                    .cta-button { min-width: 180px; }
                 }
             </style>
             
@@ -270,6 +343,7 @@
                         <div class="project-card">
                             <h3>Sentimint AI Stock Analyzer</h3>
                             <p>LLM-powered stock sentiment analysis with 85% accuracy using LangChain and GPT-3.5. Features real-time market data processing and predictive analytics.</p>
+                            <p class="project-context">Sentimint — multi-agent equity analyzer (LangChain, GPT-3.5); produced explainable buy/sell rationales.</p>
                             <div>
                                 <span class="pill">Python</span>
                                 <span class="pill">LangChain</span>
@@ -281,6 +355,7 @@
                         <div class="project-card">
                             <h3>Trust Drive Blockchain</h3>
                             <p>Decentralized trust management system for secure data sharing. Implements smart contracts for access control and cryptographic verification.</p>
+                            <p class="project-context">Trust Drive — blockchain-based trust management system for secure data sharing with smart contracts.</p>
                             <div>
                                 <span class="pill">Solidity</span>
                                 <span class="pill">Web3.js</span>
@@ -292,6 +367,7 @@
                         <div class="project-card">
                             <h3>AutoUnify Platform</h3>
                             <p>AI-powered data integration platform that reduced schema complexity by 40%. Features automated mapping and intelligent data transformation.</p>
+                            <p class="project-context">AutoUnify — AI-powered data integration platform that reduced schema complexity by 40% through optimization.</p>
                             <div>
                                 <span class="pill">Python</span>
                                 <span class="pill">Machine Learning</span>
@@ -365,7 +441,17 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">📄</div>
-                            <a href="/Rohan_Resume_Latex.pdf" rel="noopener noreferrer">Download Resume</a>
+                            <a href="/resume.pdf" rel="noopener noreferrer">View Resume (PDF)</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Clear CTA Section -->
+                    <div class="cta-section">
+                        <h3>Ready to Connect?</h3>
+                        <div class="cta-buttons">
+                            <a href="mailto:rohanchavan0701@gmail.com" class="cta-button primary">Email me</a>
+                            <a href="/resume.pdf" class="cta-button secondary">View Resume (PDF)</a>
+                            <a href="#root" class="cta-button tertiary">View full interactive portfolio</a>
                         </div>
                     </div>
                 </div>

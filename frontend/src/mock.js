@@ -73,8 +73,8 @@ export const portfolioData = {
     {
       id: 3,
       title: "TypeSpec API Generator",
-      description: "Production-grade TypeSpec models and evaluation pipeline using Vertex AI and Gemini for automated schema generation and validation.",
-      longDescription: "Spearheaded the design of 25+ production-grade TypeSpec models for CDK Repair APIs at AutoUnify, reducing schema duplication by 40%. Engineered a comprehensive model evaluation pipeline using Vertex AI and Gemini for automated schema generation from unstructured input.",
+              description: "Production-grade TypeSpec models and evaluation pipeline using Google Cloud (Vertex AI + Gemini) for automated schema generation and validation.",
+              longDescription: "Spearheaded the design of 25+ production-grade TypeSpec models for CDK Repair APIs at AutoUnify, reducing schema duplication by 40%. Built an evaluation pipeline on Google Cloud (Vertex AI + Gemini) for automated schema generation from unstructured input.",
       tech: ["TypeSpec", "Vertex AI", "Gemini", "OpenAPI", "Google Cloud", "REST APIs", "CI/CD"],
       category: "DevOps/API",
       featured: true,

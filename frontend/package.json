@@ -59,7 +59,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "npm run test:links",
+    "test:links": "node scripts/link-check.mjs"
   },
   "browserslist": {
     "production": [
