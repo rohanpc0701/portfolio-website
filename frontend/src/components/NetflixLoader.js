@@ -83,10 +83,10 @@ const NetflixLoader = ({ onComplete }) => {
           </div>
 
           {/* Corner accents - much larger brackets to properly frame the large ROHAN text */}
-          <div className="absolute top-2 left-2 w-32 h-32 border-l-4 border-t-4 border-blue-500 animate-fade-in"></div>
-          <div className="absolute top-2 right-2 w-32 h-32 border-r-4 border-t-4 border-blue-500 animate-fade-in"></div>
-          <div className="absolute bottom-2 left-2 w-32 h-32 border-l-4 border-b-4 border-cyan-500 animate-fade-in"></div>
-          <div className="absolute bottom-2 right-2 w-32 h-32 border-r-4 border-b-4 border-cyan-500 animate-fade-in"></div>
+          <div className="absolute top-1 left-1 w-40 h-40 border-l-4 border-t-4 border-blue-500 animate-fade-in"></div>
+          <div className="absolute top-1 right-1 w-40 h-40 border-r-4 border-t-4 border-blue-500 animate-fade-in"></div>
+          <div className="absolute bottom-1 left-1 w-40 h-40 border-l-4 border-b-4 border-cyan-500 animate-fade-in"></div>
+          <div className="absolute bottom-1 right-1 w-40 h-40 border-r-4 border-b-4 border-cyan-500 animate-fade-in"></div>
         </div>
       )}
 
