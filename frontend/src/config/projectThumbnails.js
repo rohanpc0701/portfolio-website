@@ -8,6 +8,9 @@
 // };
 
 export const thumbnailOverrides = {
+  // Sentimint project (supports common name variants)
+  sentimint: '/images/projects/sentimint.jpeg',
+  sentmint: '/images/projects/sentimint.jpeg',
 };
 
 
