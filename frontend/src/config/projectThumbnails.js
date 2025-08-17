@@ -22,6 +22,11 @@ export const thumbnailOverrides = {
   // Suspicious Baggage Detection System
   'Suspicious-Baggage-Detection-System': '/images/projects/baggage.jpeg',
   'suspicious-baggage-detection-system': '/images/projects/baggage.jpeg',
+  // CANI AI Blogging Website
+  'CANI-AI-Blogging-Website': '/images/projects/blog-sites.jpeg',
+  'cani-ai-blogging-website': '/images/projects/blog-sites.jpeg',
+  'CANI-AI-Blog-Sites': '/images/projects/blog-sites.jpeg',
+  'cani-ai-blog-sites': '/images/projects/blog-sites.jpeg',
 };
 
 // Resolve a thumbnail for a given repo name using flexible matching:
