@@ -56,9 +56,9 @@ const NetflixLoader = ({ onComplete }) => {
 
       {/* TUDUM Phase - ROHAN text now properly contained within larger brackets */}
       {currentPhase === 'tudum' && (
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 text-center flex flex-col items-center justify-center min-h-screen">
           {/* Main ROHAN.DEV text with Netflix-style animation - balanced sizing for aesthetics */}
-          <div className="relative">
+          <div className="relative text-center">
             <h1 className="text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-cyan-100 tracking-wider animate-netflix-reveal">
               ROHAN
             </h1>
@@ -70,7 +70,7 @@ const NetflixLoader = ({ onComplete }) => {
           </div>
 
           {/* Subtitle */}
-          <div className="mt-8 animate-fade-in-up-delayed">
+          <div className="mt-8 animate-fade-in-up-delayed text-center">
             <p className="text-xl text-gray-400 font-light tracking-wide">
               AI/ML Engineer Portfolio
             </p>
