@@ -10,22 +10,40 @@ const Skills = () => {
     languages: [
       { name: "Python", level: 95, category: "programming" },
       { name: "JavaScript", level: 90, category: "programming" },
-      { name: "Java", level: 85, category: "programming" }
+      { name: "Java", level: 85, category: "programming" },
+      { name: "SQL", level: 80, category: "database" },
+      { name: "HTML/CSS", level: 85, category: "web" },
+      { name: "Node.js", level: 80, category: "backend" }
     ],
     frameworks: [
       { name: "React.js", level: 90, category: "frontend" },
       { name: "Django", level: 85, category: "backend" },
-      { name: "PyTorch", level: 90, category: "ai-ml" }
+      { name: "FastAPI", level: 80, category: "backend" },
+      { name: "PyTorch", level: 90, category: "ai-ml" },
+      { name: "TensorFlow", level: 85, category: "ai-ml" },
+      { name: "LangChain", level: 85, category: "ai-ml" },
+      { name: "OpenCV", level: 80, category: "cv" },
+      { name: "HuggingFace", level: 85, category: "ai-ml" }
     ],
     tools: [
       { name: "Git/GitHub", level: 95, category: "development" },
       { name: "Docker", level: 80, category: "devops" },
-      { name: "AWS", level: 85, category: "cloud" }
+      { name: "Kubernetes", level: 75, category: "devops" },
+      { name: "AWS", level: 85, category: "cloud" },
+      { name: "GCP", level: 80, category: "cloud" },
+      { name: "Terraform", level: 70, category: "devops" },
+      { name: "MongoDB", level: 80, category: "database" },
+      { name: "PostgreSQL", level: 85, category: "database" }
     ],
     aiMl: [
       { name: "Machine Learning", level: 90, category: "core" },
       { name: "Deep Learning", level: 85, category: "core" },
-      { name: "Large Language Models", level: 95, category: "specialized" }
+      { name: "Natural Language Processing", level: 90, category: "domain" },
+      { name: "Computer Vision", level: 85, category: "domain" },
+      { name: "Large Language Models", level: 95, category: "specialized" },
+      { name: "Reinforcement Learning", level: 75, category: "specialized" },
+      { name: "MLOps", level: 80, category: "engineering" },
+      { name: "Model Evaluation", level: 85, category: "engineering" }
     ]
   };
   const [skillsData, setSkillsData] = useState(defaultSkills);
