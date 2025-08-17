@@ -54,7 +54,7 @@ const NetflixLoader = ({ onComplete }) => {
         </div>
       )}
 
-      {/* TUDUM Phase */}
+      {/* TUDUM Phase - ROHAN text now properly contained within brackets */}
       {currentPhase === 'tudum' && (
         <div className="relative z-10 text-center">
           {/* Main ROHAN.DEV text with Netflix-style animation - reduced size to fit brackets */}
