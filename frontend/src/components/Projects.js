@@ -110,6 +110,12 @@ const Projects = () => {
                 return true;
             }
           });
+          // Sort by recency and stars to highlight impact
+          filtered.sort((a, b) => {
+            const aStars = parseInt((a.highlights?.[0] || '').replace(/\D/g, '')) || 0;
+            const bStars = parseInt((b.highlights?.[0] || '').replace(/\D/g, '')) || 0;
+            return bStars - aStars;
+          });
           setProjects(filtered);
         } else {
           try {
@@ -330,6 +336,10 @@ const Projects = () => {
                 </li>
               ))}
             </ul>
+            {/* Recruiter-friendly CTA */}
+            <div className="mt-4 text-sm text-gray-400">
+              Impact summary: built with {project.tech.slice(0, 3).join(', ')} — see code and demo links below.
+            </div>
           </div>
 
           <div className="mb-6">
