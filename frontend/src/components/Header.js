@@ -64,7 +64,7 @@ const Header = () => {
               Contact
             </button>
             <a
-              href="/Rohan_Resume_Latex.pdf"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-blue-400 transition-colors duration-200 font-medium"
