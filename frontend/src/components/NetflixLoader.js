@@ -54,16 +54,16 @@ const NetflixLoader = ({ onComplete }) => {
         </div>
       )}
 
-      {/* TUDUM Phase - ROHAN text now properly contained within brackets */}
+      {/* TUDUM Phase - ROHAN text now properly contained within larger brackets */}
       {currentPhase === 'tudum' && (
         <div className="relative z-10 text-center">
-          {/* Main ROHAN.DEV text with Netflix-style animation - reduced size to fit brackets */}
+          {/* Main ROHAN.DEV text with Netflix-style animation - restored large size with bigger brackets */}
           <div className="relative">
-            <h1 className="text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-cyan-100 tracking-wider animate-netflix-reveal">
+            <h1 className="text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-cyan-100 tracking-wider animate-netflix-reveal">
               ROHAN
             </h1>
             <div className="mt-2">
-              <span className="text-2xl lg:text-3xl font-mono text-blue-400 tracking-[0.3em] animate-netflix-reveal-delayed">
+              <span className="text-4xl lg:text-5xl font-mono text-blue-400 tracking-[0.3em] animate-netflix-reveal-delayed">
                 .DEV
               </span>
             </div>
@@ -82,11 +82,11 @@ const NetflixLoader = ({ onComplete }) => {
             <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-slide-across-reverse"></div>
           </div>
 
-          {/* Corner accents - positioned to properly frame the text */}
-          <div className="absolute top-4 left-4 w-16 h-16 border-l-2 border-t-2 border-blue-500 animate-fade-in"></div>
-          <div className="absolute top-4 right-4 w-16 h-16 border-r-2 border-t-2 border-blue-500 animate-fade-in"></div>
-          <div className="absolute bottom-4 left-4 w-16 h-16 border-l-2 border-b-2 border-cyan-500 animate-fade-in"></div>
-          <div className="absolute bottom-4 right-4 w-16 h-16 border-r-2 border-b-2 border-cyan-500 animate-fade-in"></div>
+          {/* Corner accents - much larger brackets to properly frame the large ROHAN text */}
+          <div className="absolute top-2 left-2 w-32 h-32 border-l-4 border-t-4 border-blue-500 animate-fade-in"></div>
+          <div className="absolute top-2 right-2 w-32 h-32 border-r-4 border-t-4 border-blue-500 animate-fade-in"></div>
+          <div className="absolute bottom-2 left-2 w-32 h-32 border-l-4 border-b-4 border-cyan-500 animate-fade-in"></div>
+          <div className="absolute bottom-2 right-2 w-32 h-32 border-r-4 border-b-4 border-cyan-500 animate-fade-in"></div>
         </div>
       )}
 
