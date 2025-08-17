@@ -57,13 +57,13 @@ const NetflixLoader = ({ onComplete }) => {
       {/* TUDUM Phase - ROHAN text now properly contained within larger brackets */}
       {currentPhase === 'tudum' && (
         <div className="relative z-10 text-center">
-          {/* Main ROHAN.DEV text with Netflix-style animation - restored large size with bigger brackets */}
+          {/* Main ROHAN.DEV text with Netflix-style animation - balanced sizing for aesthetics */}
           <div className="relative">
-            <h1 className="text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-cyan-100 tracking-wider animate-netflix-reveal">
+            <h1 className="text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-cyan-100 tracking-wider animate-netflix-reveal">
               ROHAN
             </h1>
-            <div className="mt-2">
-              <span className="text-4xl lg:text-5xl font-mono text-blue-400 tracking-[0.3em] animate-netflix-reveal-delayed">
+            <div className="mt-3">
+              <span className="text-3xl lg:text-4xl font-mono text-blue-400 tracking-[0.3em] animate-netflix-reveal-delayed">
                 .DEV
               </span>
             </div>
@@ -82,11 +82,11 @@ const NetflixLoader = ({ onComplete }) => {
             <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-slide-across-reverse"></div>
           </div>
 
-          {/* Corner accents - much larger brackets to properly frame the large ROHAN text */}
-          <div className="absolute top-1 left-1 w-40 h-40 border-l-4 border-t-4 border-blue-500 animate-fade-in"></div>
-          <div className="absolute top-1 right-1 w-40 h-40 border-r-4 border-t-4 border-blue-500 animate-fade-in"></div>
-          <div className="absolute bottom-1 left-1 w-40 h-40 border-l-4 border-b-4 border-cyan-500 animate-fade-in"></div>
-          <div className="absolute bottom-1 right-1 w-40 h-40 border-r-4 border-b-4 border-cyan-500 animate-fade-in"></div>
+          {/* Corner accents - perfectly sized brackets for aesthetic balance */}
+          <div className="absolute top-6 left-6 w-36 h-36 border-l-4 border-t-4 border-blue-500 animate-fade-in"></div>
+          <div className="absolute top-6 right-6 w-36 h-36 border-r-4 border-t-4 border-blue-500 animate-fade-in"></div>
+          <div className="absolute bottom-6 left-6 w-36 h-36 border-l-4 border-b-4 border-cyan-500 animate-fade-in"></div>
+          <div className="absolute bottom-6 right-6 w-36 h-36 border-r-4 border-b-4 border-cyan-500 animate-fade-in"></div>
         </div>
       )}
 
