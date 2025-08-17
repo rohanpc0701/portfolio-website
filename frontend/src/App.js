@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -16,19 +16,14 @@ import Footer from "./components/Footer";
 const Portfolio = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Show a brief non-blocking intro animation; never gate content
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 900);
-    return () => clearTimeout(timer);
-  }, []);
+  const handleLoadingComplete = () => setIsLoading(false);
+
+  if (isLoading) {
+    return <NetflixLoader onComplete={handleLoadingComplete} />;
+  }
 
   return (
     <div className="bg-black min-h-screen animate-fade-in">
-      {isLoading && (
-        <div className="fixed inset-0 z-50">
-          <NetflixLoader onComplete={() => setIsLoading(false)} />
-        </div>
-      )}
       {/* Skip link for accessibility */}
       <a
         href="#maincontent"
