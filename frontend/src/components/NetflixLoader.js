@@ -8,7 +8,8 @@ const NetflixLoader = ({ onComplete }) => {
     const timeline = [
       { phase: 'logo', delay: 800 },
       { phase: 'tudum', delay: 2500 },
-      { phase: 'complete', delay: 4000 }
+      // Keep ROHAN.DEV visible for ~2 seconds before completing
+      { phase: 'complete', delay: 4500 }
     ];
 
     timeline.forEach(({ phase, delay }) => {
