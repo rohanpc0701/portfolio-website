@@ -19,6 +19,9 @@ export const thumbnailOverrides = {
   'trust-drive': '/images/projects/blockchain.jpg',
   TrustDrive: '/images/projects/blockchain.jpg',
   trustdrive: '/images/projects/blockchain.jpg',
+  // Suspicious Baggage Detection System
+  'Suspicious-Baggage-Detection-System': '/images/projects/baggage.jpeg',
+  'suspicious-baggage-detection-system': '/images/projects/baggage.jpeg',
 };
 
 // Resolve a thumbnail for a given repo name using flexible matching:
