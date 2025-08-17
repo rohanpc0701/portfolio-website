@@ -27,6 +27,13 @@ export const thumbnailOverrides = {
   'cani-ai-blogging-website': '/images/projects/blog-sites.jpeg',
   'CANI-AI-Blog-Sites': '/images/projects/blog-sites.jpeg',
   'cani-ai-blog-sites': '/images/projects/blog-sites.jpeg',
+  // Live Options project
+  'Live-Options': '/images/projects/options stocks.jpg',
+  'live-options': '/images/projects/options stocks.jpg',
+  'Live-Options-Project': '/images/projects/options stocks.jpg',
+  'live-options-project': '/images/projects/options stocks.jpg',
+  'Options-Stocks': '/images/projects/options stocks.jpg',
+  'options-stocks': '/images/projects/options stocks.jpg',
 };
 
 // Resolve a thumbnail for a given repo name using flexible matching:
