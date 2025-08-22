@@ -43,4 +43,29 @@ drop policy if exists "Projects write" on public.projects;
 create policy "Projects write" on public.projects
   for all using (auth.role() = 'service_role') with check (auth.role() = 'service_role');
 
+-- Contact messages table for Supabase (Postgres)
+create table if not exists public.contact_messages (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  email text not null,
+  subject text not null,
+  message text not null,
+  status text not null default 'new' check (status in ('new','read','replied')),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
 
+drop trigger if exists contact_messages_set_updated_at on public.contact_messages;
+create trigger contact_messages_set_updated_at
+before update on public.contact_messages
+for each row execute function public.set_updated_at();
+
+alter table public.contact_messages enable row level security;
+
+drop policy if exists "Contact read (admin)" on public.contact_messages;
+create policy "Contact read (admin)" on public.contact_messages
+  for select using (auth.role() = 'service_role');
+
+drop policy if exists "Contact write (service)" on public.contact_messages;
+create policy "Contact write (service)" on public.contact_messages
+  for all using (auth.role() = 'service_role') with check (auth.role() = 'service_role');

@@ -2,8 +2,8 @@ import axios from 'axios';
 import { db } from './firebase';
 import { collection, getDocs, query, where, orderBy, addDoc } from 'firebase/firestore';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API_BASE = `${BACKEND_URL}/api`;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || (process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : '');
+const API_BASE = BACKEND_URL ? `${BACKEND_URL}/api` : '/api';
 
 // Create axios instance with default config
 const apiClient = axios.create({

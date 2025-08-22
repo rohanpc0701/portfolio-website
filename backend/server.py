@@ -49,7 +49,7 @@ app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 # Collections (MongoDB only)
-if db:
+if db is not None:
     personal_collection = db.personal_info
     education_collection = db.education
     experience_collection = db.experience
@@ -123,7 +123,7 @@ async def get_projects(category: Optional[str] = None, featured_only: bool = Fal
         return [Project(**row) for row in normalized]
 
     # MongoDB path
-    if not db:
+    if db is None:
         raise HTTPException(status_code=500, detail="No database configured")
     query = {}
     if category and category != "all":
@@ -155,7 +155,7 @@ async def bulk_create_projects(projects: List[ProjectCreate]):
             rows = result.data or []
             return [Project(**row) for row in rows]
 
-        if not db:
+        if db is None:
             raise HTTPException(status_code=500, detail="No database configured")
         created: List[Project] = []
         for proj in projects:
@@ -208,31 +208,63 @@ async def get_complete_portfolio():
 # Contact Endpoints
 @api_router.post("/contact", response_model=ContactMessage)
 async def submit_contact_form(form_data: ContactMessageCreate):
-    """Submit contact form"""
-    message_dict = form_data.dict()
-    message_obj = ContactMessage(**message_dict)
-    
-    result = await contact_collection.insert_one(message_obj.dict())
-    message_obj.id = str(result.inserted_id)
-    
-    return message_obj
+    """Submit contact form. Uses Supabase if configured, otherwise MongoDB."""
+    try:
+        # Prefer Supabase if available
+        if supabase:
+            payload = form_data.dict()
+            payload.setdefault("status", "new")
+            result = supabase.table("contact_messages").insert(payload).execute()
+            rows = result.data or []
+            if not rows:
+                raise HTTPException(status_code=500, detail="Failed to save contact message")
+            row = rows[0]
+            # Normalize optional fields for Pydantic
+            row.setdefault("status", "new")
+            return ContactMessage(**row)
+
+        # Fallback to MongoDB
+        if db is None:
+            raise HTTPException(status_code=500, detail="No database configured")
+
+        message_obj = ContactMessage(**form_data.dict())
+        result = await contact_collection.insert_one(message_obj.dict())
+        message_obj.id = str(result.inserted_id)
+        return message_obj
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error submitting contact form: {str(e)}")
 
 @api_router.get("/contact/messages", response_model=List[ContactMessage])
 async def get_contact_messages():
-    """Get all contact messages (admin endpoint)"""
-    messages_cursor = contact_collection.find({}).sort("created_at", -1)
-    messages_list = await messages_cursor.to_list(length=None)
-    
-    for message in messages_list:
-        message['id'] = str(message.pop('_id'))
-    
-    return [ContactMessage(**message) for message in messages_list]
+    """Get all contact messages (admin endpoint). Uses Supabase if configured, otherwise MongoDB."""
+    try:
+        if supabase:
+            result = supabase.table("contact_messages").select("*").order("created_at", desc=True).execute()
+            rows = result.data or []
+            return [ContactMessage(**row) for row in rows]
+
+        if db is None:
+            raise HTTPException(status_code=500, detail="No database configured")
+
+        messages_cursor = contact_collection.find({}).sort("created_at", -1)
+        messages_list = await messages_cursor.to_list(length=None)
+        for message in messages_list:
+            message['id'] = str(message.pop('_id'))
+        return [ContactMessage(**message) for message in messages_list]
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching contact messages: {str(e)}")
 
 # Admin/Seed Endpoints
 @api_router.post("/admin/seed")
 async def seed_database():
     """Seed database with initial portfolio data"""
     try:
+        if db is None:
+            raise HTTPException(status_code=500, detail="No database configured")
         # Clear existing data
         await personal_collection.delete_many({})
         await education_collection.delete_many({})
@@ -296,6 +328,15 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Simple health endpoints for platform probes
+@app.get("/")
+async def health_root():
+    return {"status": "ok", "service": "portfolio-backend"}
+
+@app.get("/healthz")
+async def healthz():
+    return {"status": "ok"}
 
 # Configure logging
 logging.basicConfig(
