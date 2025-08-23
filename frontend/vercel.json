@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/api/:path*", "destination": "https://api.rohan.dev/api/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
