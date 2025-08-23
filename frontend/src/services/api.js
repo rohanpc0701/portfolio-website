@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { db } from './firebase';
+import { db, firebaseReady } from './firebase';
 import { collection, getDocs, query, where, orderBy, addDoc } from 'firebase/firestore';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || (process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : '');
@@ -123,11 +123,29 @@ export const portfolioAPI = {
 
   // Submit contact form
   async submitContactForm(formData) {
+    // Try backend first
     try {
       const response = await apiClient.post('/contact', formData);
       return response.data;
     } catch (error) {
-      console.error('Error submitting contact form:', error);
+      console.warn('Backend contact submission failed, considering Firebase fallback...', error?.response?.status || error?.message);
+      // If Firebase is configured, write to Firestore as fallback
+      if (firebaseReady && process.env.REACT_APP_FIREBASE_PROJECT_ID) {
+        try {
+          const col = collection(db, 'contact_messages');
+          const payload = {
+            ...formData,
+            status: 'new',
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+          };
+          const docRef = await addDoc(col, payload);
+          return { id: docRef.id, ...payload };
+        } catch (fbErr) {
+          console.error('Firebase fallback failed:', fbErr);
+          throw error; // bubble up original backend error
+        }
+      }
       throw error;
     }
   },
