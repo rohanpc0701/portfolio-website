@@ -7,7 +7,7 @@ import NetflixLoader from "./components/NetflixLoader";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Experience from "./components/Experience";
+import ExperienceTimeline from "./components/ExperienceTimeline";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
@@ -35,7 +35,7 @@ const Portfolio = () => {
       <main id="maincontent">
         <Hero />
         <About />
-        <Experience />
+        <ExperienceTimeline />
         <Projects />
         <Skills />
         <Contact />

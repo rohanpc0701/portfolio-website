@@ -1,0 +1,84 @@
+{
+  "roles": [
+    {
+      "company": "AutoUnify",
+      "title": "Generative AI Intern",
+      "location": "Remote",
+      "dates": "May 2025 – Present",
+      "logo": "/logos/autounify.svg",
+      "summary": "Built production-grade schema pipelines and evaluation with LLMs.",
+      "bullets": [
+        "Designed 23+ TypeSpec models for CDK Repair APIs; cut schema duplication by 40% and saved ~20 dev hours/week for 5+ teams.",
+        "Built Vertex AI + Gemini pipeline on Azure to auto-generate/validate schemas from unstructured inputs; reduced manual validation by ~25 hrs/week across 10+ services.",
+        "Refactored legacy field types with Cursor BugBot; enforced naming conventions → bug reports down 15% across 12 devs.",
+        "Implemented GitOps with GitHub Actions + Pytest; CI/CD merge velocity up 20% and QA confidence improved."
+      ],
+      "stack": ["TypeSpec","Vertex AI","Gemini","OpenAPI","Azure","GitHub Actions","Pytest","REST APIs"],
+      "links": []
+    },
+    {
+      "company": "Virginia Tech (Team HokieTokie)",
+      "title": "Team Member — Amazon Nova AI Challenge (Trusted AI)",
+      "location": "Blacksburg, VA",
+      "dates": "Jan 2025 – Present",
+      "logo": "/logos/amazon-nova.svg",
+      "summary": "Red‑teaming & defenses for LLMs; taxonomy, detection, and telemetry.",
+      "bullets": [
+        "Led red‑teaming and built a prompt‑attack taxonomy (code injection, insecure cryptography); identified 50+ vulnerabilities.",
+        "Built ShieldBot with GPT‑4 & Claude on Azure; ~56‑second end‑to‑end response to detect/block adversarial prompts at scale.",
+        "Severity classification with DeepSeek; informed alignment protocols and reduced deployment risk by ~30%.",
+        "Integrated telemetry dashboards via Azure Kusto for safety monitoring."
+      ],
+      "stack": ["Amazon Bedrock","Azure","Claude","GPT‑4","DeepSeek","AI Safety","Kusto"],
+      "links": []
+    },
+    {
+      "company": "Virginia Tech — Division of IT",
+      "title": "Software Maintainer",
+      "location": "Blacksburg, VA",
+      "dates": "Dec 2024 – Feb 2025",
+      "logo": "/logos/vt.svg",
+      "summary": "Modernized Summit ML workflows; containerization + CI/CD.",
+      "bullets": [
+        "Modernized ML workflow subsystems (Summit) by containerizing services with Docker across AWS Lambda, S3, ECS.",
+        "Implemented CI/CD and IaC; streamlined integrations and enabled low‑downtime automated deploys.",
+        "Resolved conflicting Python envs; modular Docker setup reduced build errors by ~35% and accelerated delivery cycles."
+      ],
+      "stack": ["AWS Lambda","S3","ECS","Docker","Python","IaC","CI/CD"],
+      "links": []
+    },
+    {
+      "company": "Virginia Tech",
+      "title": "Wage Grader — ECE 4564 Network Application Design",
+      "location": "Blacksburg, VA",
+      "dates": "Oct 2024 – Present",
+      "logo": "/logos/vt.svg",
+      "summary": "Automated + manual testing for client‑server apps; faster grading.",
+      "bullets": [
+        "Evaluated 50+ projects for protocol compliance, code quality, and architecture.",
+        "Assertion‑based + manual testing improved grading efficiency by ~40%.",
+        "Structured feedback on Python/Docker projects improved modularity by ~30%."
+      ],
+      "stack": ["Python","Docker","Testing"],
+      "links": []
+    },
+    {
+      "company": "Colgate‑Palmolive GBS",
+      "title": "Intelligent Process Automation Intern",
+      "location": "Mumbai, India",
+      "dates": "Jan 2024 – Jun 2024",
+      "logo": "/logos/colgate.svg",
+      "summary": "NLP chatbots for O2I/S2P; latency + adoption improvements.",
+      "bullets": [
+        "Developed 3 NLP chatbots automating ~70% of 1,000+ weekly FAQ queries; saved ~50 staff hours/month for 200+ users.",
+        "Integrated ChatGPT REST API with custom intent recognition (LogReg, Decision Trees) using PyTorch; latency 15s → 10s.",
+        "Led React.js + BERT full‑stack app; deployed via GitHub Actions; user satisfaction up ~20% (survey of 150+ employees).",
+        "Modular MongoDB backend with Pytest enabled ~30% faster retraining across 5+ workflows."
+      ],
+      "stack": ["Python","ChatGPT API","BERT","React.js","PyTorch","MongoDB","GitHub Actions","Pytest"],
+      "links": []
+    }
+  ]
+}
+
+
