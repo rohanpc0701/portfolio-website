@@ -21,7 +21,7 @@
       "title": "Team Member — Amazon Nova AI Challenge (Trusted AI)",
       "location": "Blacksburg, VA",
       "dates": "Jan 2025 – Present",
-      "logo": "/logos/amazon-nova.svg",
+      "logo": "/logos/amazonnova.jpeg",
       "summary": "Red‑teaming & defenses for LLMs; taxonomy, detection, and telemetry.",
       "bullets": [
         "Led red‑teaming and built a prompt‑attack taxonomy (code injection, insecure cryptography); identified 50+ vulnerabilities.",
