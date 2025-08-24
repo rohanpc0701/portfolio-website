@@ -53,13 +53,14 @@ const Skills = () => {
     const fetchSkills = async () => {
       try {
         const data = await portfolioAPI.getSkills();
-        // Ensure structure is complete before setting
-        setSkillsData({
-          languages: Array.isArray(data?.languages) ? data.languages : defaultSkills.languages,
-          frameworks: Array.isArray(data?.frameworks) ? data.frameworks : defaultSkills.frameworks,
-          tools: Array.isArray(data?.tools) ? data.tools : defaultSkills.tools,
-          aiMl: Array.isArray(data?.aiMl) ? data.aiMl : defaultSkills.aiMl,
-        });
+        // Ensure structure is complete; fallback to defaults if missing or empty
+        const safe = {
+          languages: Array.isArray(data?.languages) && data.languages.length > 0 ? data.languages : defaultSkills.languages,
+          frameworks: Array.isArray(data?.frameworks) && data.frameworks.length > 0 ? data.frameworks : defaultSkills.frameworks,
+          tools: Array.isArray(data?.tools) && data.tools.length > 0 ? data.tools : defaultSkills.tools,
+          aiMl: Array.isArray(data?.aiMl) && data.aiMl.length > 0 ? data.aiMl : defaultSkills.aiMl,
+        };
+        setSkillsData(safe);
       } catch (error) {
         console.error('Failed to fetch skills:', error);
         // Keep showing defaults on error
