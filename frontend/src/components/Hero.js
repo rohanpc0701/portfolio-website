@@ -13,10 +13,9 @@ const Hero = () => {
   const [loading, setLoading] = useState(false);
 
   const dynamicTexts = [
+    "Engineer · Innovator · AI Safety Advocate",
     "AI/ML Engineer",
-    "Full-Stack Developer", 
-    "Research Enthusiast",
-    "Problem Solver"
+    "Full-Stack Developer" 
   ];
 
   useEffect(() => {
@@ -96,6 +95,15 @@ const Hero = () => {
                 </h2>
               </div>
 
+              {/* Quick facts badges */}
+              <div className="flex flex-wrap gap-2 justify-center lg:justify-start mb-4">
+                {['3+ internships', 'AI/ML', 'Cloud-Native', 'LLM Safety'].map((b) => (
+                  <span key={b} className="px-3 py-1 rounded-full text-sm bg-white/10 text-gray-300 border border-gray-700">
+                    {b}
+                  </span>
+                ))}
+              </div>
+
               {/* Description */}
               <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto lg:mx-0 mb-8 lg:mb-12 leading-relaxed">
                 {personalInfo?.bio || "MS Computer Engineering student at Virginia Tech specializing in AI/ML, with hands-on experience in building production-grade systems, LLM applications, and cutting-edge research in artificial intelligence."}
@@ -121,6 +129,14 @@ const Hero = () => {
                 >
                   Download Resume
                 </a>
+                <button 
+                  onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                  className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-medium rounded-full 
+                           hover:border-blue-400 hover:text-blue-400 transform hover:scale-105 transition-all duration-300 
+                           backdrop-blur-sm min-w-[200px] text-center"
+                >
+                  Contact Me
+                </button>
               </div>
             </div>
 

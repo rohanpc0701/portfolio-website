@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Sentimint AI Stock Analyzer",
+    "thumb": "/images/projects/sentimint.jpeg",
+    "summary": "LLM-powered stock sentiment analysis with explainable rationales.",
+    "metrics": ["85% trend accuracy", "Realtime feeds", "Explainable outputs"],
+    "stack": ["Python", "LangChain", "OpenAI", "React", "FastAPI"],
+    "links": { "github": "https://github.com/RohanChavan0701", "demo": "" },
+    "category": "AI/ML"
+  },
+  {
+    "title": "AutoUnify Platform",
+    "thumb": "/images/projects/blockchain.jpg",
+    "summary": "AI-powered schema generation & validation; reduced duplication by 40%.",
+    "metrics": ["40% schema reduction", "20h/wk saved", "CI/CD ready"],
+    "stack": ["TypeSpec", "OpenAPI", "Python", "Docker"],
+    "links": { "github": "https://github.com/RohanChavan0701", "demo": "" },
+    "category": "DevOps/API"
+  },
+  {
+    "title": "LLM Defender",
+    "thumb": "/images/projects/baggage.jpeg",
+    "summary": "Prompt‑attack detection and defenses; telemetry dashboards.",
+    "metrics": ["30% risk reduction", "Attack taxonomy", "Kusto telemetry"],
+    "stack": ["GPT-4", "Claude", "DeepSeek", "Azure"],
+    "links": { "github": "https://github.com/RohanChavan0701", "demo": "" },
+    "category": "AI Safety"
+  }
+]
+
+
