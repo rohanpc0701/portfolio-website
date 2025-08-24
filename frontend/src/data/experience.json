@@ -5,7 +5,7 @@
       "title": "Generative AI Intern",
       "location": "Remote",
       "dates": "May 2025 – Present",
-      "logo": "/logos/autounify.svg",
+      "logo": "/logos/autounify.avif",
       "summary": "Built production-grade schema pipelines and evaluation with LLMs.",
       "bullets": [
         "Designed 23+ TypeSpec models for CDK Repair APIs; cut schema duplication by 40% and saved ~20 dev hours/week for 5+ teams.",
@@ -37,7 +37,7 @@
       "title": "Software Maintainer",
       "location": "Blacksburg, VA",
       "dates": "Dec 2024 – Feb 2025",
-      "logo": "/logos/vt.svg",
+      "logo": "/logos/virginiatech.png",
       "summary": "Modernized Summit ML workflows; containerization + CI/CD.",
       "bullets": [
         "Modernized ML workflow subsystems (Summit) by containerizing services with Docker across AWS Lambda, S3, ECS.",
@@ -52,7 +52,7 @@
       "title": "Wage Grader — ECE 4564 Network Application Design",
       "location": "Blacksburg, VA",
       "dates": "Oct 2024 – Present",
-      "logo": "/logos/vt.svg",
+      "logo": "/logos/virginiatech.png",
       "summary": "Automated + manual testing for client‑server apps; faster grading.",
       "bullets": [
         "Evaluated 50+ projects for protocol compliance, code quality, and architecture.",
@@ -67,7 +67,7 @@
       "title": "Intelligent Process Automation Intern",
       "location": "Mumbai, India",
       "dates": "Jan 2024 – Jun 2024",
-      "logo": "/logos/colgate.svg",
+      "logo": "/logos/colgatepalmolive.png",
       "summary": "NLP chatbots for O2I/S2P; latency + adoption improvements.",
       "bullets": [
         "Developed 3 NLP chatbots automating ~70% of 1,000+ weekly FAQ queries; saved ~50 staff hours/month for 200+ users.",

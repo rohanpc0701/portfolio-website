@@ -123,9 +123,21 @@ const ExperienceTimeline = () => {
 
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-2">
                     <div className="flex items-start space-x-4">
-                      <div className={`p-3 ${colors.iconBg} rounded-full flex-shrink-0`}>
-                        <Briefcase className={`w-6 h-6 ${colors.iconText}`} />
-                      </div>
+                      {exp.logo ? (
+                        <img
+                          src={exp.logo}
+                          alt={`${exp.company} logo`}
+                          width="40"
+                          height="40"
+                          className="w-10 h-10 rounded-md object-contain bg-white/5 p-1 border border-gray-800"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ) : (
+                        <div className={`p-3 ${colors.iconBg} rounded-full flex-shrink-0`}>
+                          <Briefcase className={`w-6 h-6 ${colors.iconText}`} />
+                        </div>
+                      )}
                       <div>
                         <h3 className="text-xl lg:text-2xl font-semibold text-white mb-1">{exp.title}</h3>
                         <p className={`text-lg font-medium ${colors.companyText}`}>{exp.company}</p>
