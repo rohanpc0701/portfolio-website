@@ -125,7 +125,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-medium rounded-full 
                            hover:border-blue-400 hover:text-blue-400 transform hover:scale-105 transition-all duration-300 
-                           backdrop-blur-sm min-w-[200px] text-center"
+                           backdrop-blur-sm min-w-[200px] text-center whitespace-nowrap"
                 >
                   Download Resume
                 </a>
@@ -133,7 +133,7 @@ const Hero = () => {
                   onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                   className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-medium rounded-full 
                            hover:border-blue-400 hover:text-blue-400 transform hover:scale-105 transition-all duration-300 
-                           backdrop-blur-sm min-w-[200px] text-center"
+                           backdrop-blur-sm min-w-[200px] text-center whitespace-nowrap"
                 >
                   Contact Me
                 </button>
