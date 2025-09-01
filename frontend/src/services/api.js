@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { db, firebaseReady } from './firebase';
 import { collection, getDocs, query, where, orderBy, addDoc } from 'firebase/firestore';
+import experienceJson from '../data/experience.json';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || (process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : '');
 const API_BASE = BACKEND_URL ? `${BACKEND_URL}/api` : '/api';
+const BACKEND_CONFIGURED = Boolean(BACKEND_URL);
 
 // Create axios instance with default config
 const apiClient = axios.create({
@@ -14,38 +16,135 @@ const apiClient = axios.create({
   timeout: 10000, // 10 second timeout
 });
 
+// Local fallbacks to keep the site functional when backend is unavailable
+const fallbackPersonal = {
+  name: 'Rohan Praveen Chavan',
+  bio: 'MS Computer Engineering student at Virginia Tech specializing in AI/ML, with hands-on experience in building production-grade systems, LLM applications, and cutting-edge research in artificial intelligence.'
+};
+
+const fallbackEducation = [
+  {
+    id: '1',
+    degree: 'M.S. Computer Engineering',
+    institution: 'Virginia Polytechnic Institute and State University',
+    location: 'Blacksburg, VA, USA',
+    period: 'Aug 2024 – May 2026',
+    gpa: '3.68/4.0',
+    type: 'masters'
+  },
+  {
+    id: '2',
+    degree: 'B.Tech Information Technology',
+    institution: 'K.J. Somaiya College of Engineering',
+    location: 'Mumbai, India',
+    period: 'Jan 2020 – Dec 2024',
+    gpa: '3.5/4.0',
+    type: 'bachelors'
+  }
+];
+
+const fallbackSkills = {
+  languages: [
+    { name: 'Python', level: 95, category: 'programming' },
+    { name: 'JavaScript', level: 90, category: 'programming' },
+    { name: 'Java', level: 85, category: 'programming' },
+    { name: 'SQL', level: 80, category: 'database' },
+    { name: 'HTML/CSS', level: 85, category: 'web' },
+    { name: 'Node.js', level: 80, category: 'backend' }
+  ],
+  frameworks: [
+    { name: 'React.js', level: 90, category: 'frontend' },
+    { name: 'Django', level: 85, category: 'backend' },
+    { name: 'FastAPI', level: 80, category: 'backend' },
+    { name: 'PyTorch', level: 90, category: 'ai-ml' },
+    { name: 'TensorFlow', level: 85, category: 'ai-ml' },
+    { name: 'LangChain', level: 85, category: 'ai-ml' },
+    { name: 'OpenCV', level: 80, category: 'cv' },
+    { name: 'HuggingFace', level: 85, category: 'ai-ml' }
+  ],
+  tools: [
+    { name: 'Git/GitHub', level: 95, category: 'development' },
+    { name: 'Docker', level: 80, category: 'devops' },
+    { name: 'Kubernetes', level: 75, category: 'devops' },
+    { name: 'AWS', level: 85, category: 'cloud' },
+    { name: 'GCP', level: 80, category: 'cloud' },
+    { name: 'Terraform', level: 70, category: 'devops' },
+    { name: 'MongoDB', level: 80, category: 'database' },
+    { name: 'PostgreSQL', level: 85, category: 'database' }
+  ],
+  aiMl: [
+    { name: 'Machine Learning', level: 90, category: 'core' },
+    { name: 'Deep Learning', level: 85, category: 'core' },
+    { name: 'Natural Language Processing', level: 90, category: 'domain' },
+    { name: 'Computer Vision', level: 85, category: 'domain' },
+    { name: 'Large Language Models', level: 95, category: 'specialized' },
+    { name: 'Reinforcement Learning', level: 75, category: 'specialized' },
+    { name: 'MLOps', level: 80, category: 'engineering' },
+    { name: 'Model Evaluation', level: 85, category: 'engineering' }
+  ]
+};
+
+const mapExperienceFromJson = () => {
+  const roles = Array.isArray(experienceJson?.roles) ? experienceJson.roles : [];
+  return roles.map((r, idx) => ({
+    id: r.id || String(idx + 1),
+    company: r.company,
+    title: r.title,
+    location: r.location,
+    period: r.dates,
+    achievements: r.bullets || [],
+    metrics: r.metrics || [],
+    tech: r.stack || [],
+    color: r.color || 'blue',
+    logo: r.logo || null,
+    type: 'professional'
+  }));
+};
+
 // API service functions
 export const portfolioAPI = {
   // Get personal information
   async getPersonalInfo() {
     try {
+      if (!BACKEND_CONFIGURED && process.env.NODE_ENV === 'production') {
+        return fallbackPersonal;
+      }
       const response = await apiClient.get('/portfolio/personal');
       return response.data;
     } catch (error) {
       console.error('Error fetching personal info:', error);
-      throw error;
+      // Fallback to local content
+      return fallbackPersonal;
     }
   },
 
   // Get education details
   async getEducation() {
     try {
+      if (!BACKEND_CONFIGURED && process.env.NODE_ENV === 'production') {
+        return fallbackEducation;
+      }
       const response = await apiClient.get('/portfolio/education');
       return response.data;
     } catch (error) {
       console.error('Error fetching education:', error);
-      throw error;
+      // Fallback to local content
+      return fallbackEducation;
     }
   },
 
   // Get work experience
   async getExperience() {
     try {
+      if (!BACKEND_CONFIGURED && process.env.NODE_ENV === 'production') {
+        return mapExperienceFromJson();
+      }
       const response = await apiClient.get('/portfolio/experience');
       return response.data;
     } catch (error) {
       console.error('Error fetching experience:', error);
-      throw error;
+      // Fallback to local content
+      return mapExperienceFromJson();
     }
   },
 
@@ -101,23 +200,41 @@ export const portfolioAPI = {
   // Get skills grouped by category
   async getSkills() {
     try {
+      if (!BACKEND_CONFIGURED && process.env.NODE_ENV === 'production') {
+        return fallbackSkills;
+      }
       // Use a shorter timeout specifically for skills to avoid long spinners
       const response = await apiClient.get('/portfolio/skills', { timeout: 1500 });
       return response.data;
     } catch (error) {
       console.error('Error fetching skills:', error);
-      throw error;
+      // Fallback to local content
+      return fallbackSkills;
     }
   },
 
   // Get complete portfolio data
   async getCompletePortfolio() {
     try {
+      if (!BACKEND_CONFIGURED && process.env.NODE_ENV === 'production') {
+        return {
+          personal: fallbackPersonal,
+          education: fallbackEducation,
+          experience: mapExperienceFromJson(),
+          skills: fallbackSkills
+        };
+      }
       const response = await apiClient.get('/portfolio/complete');
       return response.data;
     } catch (error) {
       console.error('Error fetching complete portfolio:', error);
-      throw error;
+      // Fallback to local content
+      return {
+        personal: fallbackPersonal,
+        education: fallbackEducation,
+        experience: mapExperienceFromJson(),
+        skills: fallbackSkills
+      };
     }
   },
 

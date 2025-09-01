@@ -2,41 +2,55 @@
   "roles": [
     {
       "company": "AutoUnify",
-      "title": "Generative AI Intern",
-      "location": "Remote",
-      "dates": "May 2025 – Present",
+      "title": "AI/ML Intern",
+      "dates": "May 2025 – Aug 2025",
+      "location": "San Francisco, CA (Remote/Hybrid)",
       "logo": "/logos/autounify.avif",
-      "summary": "Built production-grade schema pipelines and evaluation with LLMs.",
+      "summary": "Optimized and fine-tuned Vertex AI pipelines; boosted task accuracy 30%+, automated schema validation (−25+ hrs/wk), and sped up CI/CD velocity 20%.",
       "bullets": [
-        "Designed 23+ TypeSpec models for CDK Repair APIs; cut schema duplication by 40% and saved ~20 dev hours/week for 5+ teams.",
-        "Built Vertex AI + Gemini pipeline on Azure to auto-generate/validate schemas from unstructured inputs; reduced manual validation by ~25 hrs/week across 10+ services.",
-        "Refactored legacy field types with Cursor BugBot; enforced naming conventions → bug reports down 15% across 12 devs.",
-        "Implemented GitOps with GitHub Actions + Pytest; CI/CD merge velocity up 20% and QA confidence improved."
+        "Optimized LLMs on Vertex AI worker/QA pipelines, accuracy +30%+.",
+        "Multi-model evaluation (100+ models, 500+ endpoints) → data-driven deployment.",
+        "Vertex AI + Gemini schema validation → saved 25+ hrs/wk across 10+ services.",
+        "GitOps (Actions + Pytest) → merge velocity +20%, reliability ↑."
       ],
-      "stack": ["TypeSpec","Vertex AI","Gemini","OpenAPI","Azure","GitHub Actions","Pytest","REST APIs"],
-      "links": []
+      "stack": ["Vertex AI","Gemini","LangGraph","TypeSpec","Prompt Eng.","GitHub Actions","Pytest"]
     },
     {
-      "company": "Virginia Tech (Team HokieTokie)",
-      "title": "Team Member — Amazon Nova AI Challenge (Trusted AI)",
+      "company": "Amazon Nova AI Challenge (Trusted AI)",
+      "title": "Team Member — Virginia Tech (HokieTokie)",
+      "dates": "Jan 2025 – Jun 2025",
       "location": "Blacksburg, VA",
-      "dates": "Jan 2025 – Present",
       "logo": "/logos/amazonnova.jpeg",
-      "summary": "Red‑teaming & defenses for LLMs; taxonomy, detection, and telemetry.",
+      "summary": "Led red-teaming for Amazon Bedrock; generated 117K samples, surfaced 2,480 vulnerabilities, built ShieldBot with GPT-4/Claude (56s detection), and ranked 1st (T2), 2nd (T1).",
       "bullets": [
-        "Led red‑teaming and built a prompt‑attack taxonomy (code injection, insecure cryptography); identified 50+ vulnerabilities.",
-        "Built ShieldBot with GPT‑4 & Claude on Azure; ~56‑second end‑to‑end response to detect/block adversarial prompts at scale.",
-        "Severity classification with DeepSeek; informed alignment protocols and reduced deployment risk by ~30%.",
-        "Integrated telemetry dashboards via Azure Kusto for safety monitoring."
+        "Taxonomy-guided synthetic data pipeline (117K samples).",
+        "Attack frameworks (PAIR, PEZ, Crescendo) → 3K+ jailbreak prompts, 2,480 vulns.",
+        "ShieldBot (GPT-4 + Claude) with ~56s latency → blocked 50+ adversarial prompts/day.",
+        "Patch-and-retry with CodeGuru + skill augmentation → 983 atomic skills in 7 families.",
+        "Achieved 97% malicious compliance reduction, 62% fewer vulns, 46% fewer multi-turn jailbreaks.",
+        "Ranked 1st (T2), 2nd (T1), beating Claude-3.7, Gemini-Pro, CodeLlama-70B."
       ],
-      "stack": ["Amazon Bedrock","Azure","Claude","GPT‑4","DeepSeek","AI Safety","Kusto"],
-      "links": []
+      "stack": ["AI Safety","GPT-4","Claude","DeepSeek","Telemetry"]
+    },
+    {
+      "company": "Colgate-Palmolive GBS",
+      "title": "Intelligent Process Automation Intern",
+      "dates": "Jan 2024 – Jun 2024",
+      "location": "Mumbai, India",
+      "logo": "/logos/colgatepalmolive.png",
+      "summary": "Built 3 chatbots automating ~70% of queries; latency cut 30s → <10s; adoption +50%; hackathon winner for +35% accuracy, −60% resolution time.",
+      "bullets": [
+        "3 AI-powered chatbots (Python, ChatGPT, Kore.ai) → ~70% query automation.",
+        "RESTful ChatGPT API + ML routing → latency 30s → <10s.",
+        "BERT NLP pipeline (React + PyTorch/TensorFlow) → adoption +50%, hackathon win."
+      ],
+      "stack": ["Python","ChatGPT API","BERT","React","PyTorch","TensorFlow","MongoDB"]
     },
     {
       "company": "Virginia Tech — Division of IT",
       "title": "Software Maintainer",
-      "location": "Blacksburg, VA",
       "dates": "Dec 2024 – Feb 2025",
+      "location": "Blacksburg, VA",
       "logo": "/logos/virginiatech.png",
       "summary": "Modernized Summit ML workflows; containerization + CI/CD.",
       "bullets": [
@@ -44,14 +58,13 @@
         "Implemented CI/CD and IaC; streamlined integrations and enabled low‑downtime automated deploys.",
         "Resolved conflicting Python envs; modular Docker setup reduced build errors by ~35% and accelerated delivery cycles."
       ],
-      "stack": ["AWS Lambda","S3","ECS","Docker","Python","IaC","CI/CD"],
-      "links": []
+      "stack": ["AWS Lambda","S3","ECS","Docker","Python","IaC","CI/CD"]
     },
     {
       "company": "Virginia Tech",
       "title": "Wage Grader — ECE 4564 Network Application Design",
-      "location": "Blacksburg, VA",
       "dates": "Oct 2024 – Present",
+      "location": "Blacksburg, VA",
       "logo": "/logos/virginiatech.png",
       "summary": "Automated + manual testing for client‑server apps; faster grading.",
       "bullets": [
@@ -59,24 +72,7 @@
         "Assertion‑based + manual testing improved grading efficiency by ~40%.",
         "Structured feedback on Python/Docker projects improved modularity by ~30%."
       ],
-      "stack": ["Python","Docker","Testing"],
-      "links": []
-    },
-    {
-      "company": "Colgate‑Palmolive GBS",
-      "title": "Intelligent Process Automation Intern",
-      "location": "Mumbai, India",
-      "dates": "Jan 2024 – Jun 2024",
-      "logo": "/logos/colgatepalmolive.png",
-      "summary": "NLP chatbots for O2I/S2P; latency + adoption improvements.",
-      "bullets": [
-        "Developed 3 NLP chatbots automating ~70% of 1,000+ weekly FAQ queries; saved ~50 staff hours/month for 200+ users.",
-        "Integrated ChatGPT REST API with custom intent recognition (LogReg, Decision Trees) using PyTorch; latency 15s → 10s.",
-        "Led React.js + BERT full‑stack app; deployed via GitHub Actions; user satisfaction up ~20% (survey of 150+ employees).",
-        "Modular MongoDB backend with Pytest enabled ~30% faster retraining across 5+ workflows."
-      ],
-      "stack": ["Python","ChatGPT API","BERT","React.js","PyTorch","MongoDB","GitHub Actions","Pytest"],
-      "links": []
+      "stack": ["Python","Docker","Testing"]
     }
   ]
 }

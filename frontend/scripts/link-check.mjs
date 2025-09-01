@@ -20,7 +20,10 @@ function checkLink(url) {
     const client = url.startsWith('https') ? https : http;
     
     const req = client.get(url, (res) => {
-      resolve({ url, status: res.statusCode, ok: res.statusCode === 200 });
+      const statusCode = res.statusCode;
+      // Consider 2xx OK, 3xx redirects OK, and LinkedIn 999 as OK
+      const ok = (statusCode >= 200 && statusCode < 300) || (statusCode >= 300 && statusCode < 400) || statusCode === 999;
+      resolve({ url, status: statusCode, ok });
     });
     
     req.on('error', (err) => {

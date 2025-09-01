@@ -6,6 +6,18 @@ import { resolveThumbnailForRepo } from '../config/projectThumbnails';
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'firebase/auth';
 
 const Projects = () => {
+  const highlightRegex = /(\b\d{1,3}(?:,\d{3})*\+?\b|\b\d+\s?[kK]\+?\b|\b\d+%\b|\b<\d+\s?s\b|\b\d+\s?s\b)/g;
+  const highlightMetrics = (text) => {
+    if (!text) return null;
+    const parts = String(text).split(highlightRegex);
+    return parts.map((part, idx) => {
+      if (!part) return null;
+      if (part.match(highlightRegex)) {
+        return <strong key={idx} className="text-white">{part}</strong>;
+      }
+      return <span key={idx}>{part}</span>;
+    });
+  };
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
   const [projects, setProjects] = useState([]);
@@ -332,7 +344,7 @@ const Projects = () => {
               {project.highlights.map((highlight, index) => (
                 <li key={index} className="flex items-start space-x-3 text-gray-300">
                   <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
-                  <span>{highlight}</span>
+                  <span>{highlightMetrics(highlight)}</span>
                 </li>
               ))}
             </ul>

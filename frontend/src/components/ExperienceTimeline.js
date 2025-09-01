@@ -82,6 +82,19 @@ if (typeof window !== 'undefined') {
 const ExperienceTimeline = () => {
   const [experiences, setExperiences] = useState([]);
   const [expandedId, setExpandedId] = useState(null);
+  const highlightRegex = /(\b\d{1,3}(?:,\d{3})*\+?\b|\b\d+\s?[kK]\+?\b|\b\d+%\b|\b<\d+\s?s\b|\b\d+\s?s\b|\bhrs?\/week\b|\bhours?\/week\b)/g;
+
+  const highlightMetrics = (text) => {
+    if (!text) return null;
+    const parts = String(text).split(highlightRegex);
+    return parts.map((part, idx) => {
+      if (!part) return null;
+      if (part.match(highlightRegex)) {
+        return <strong key={idx} className="text-white">{part}</strong>;
+      }
+      return <span key={idx}>{part}</span>;
+    });
+  };
 
   useEffect(() => {
     setExperiences(experienceJson.roles || []);
@@ -169,7 +182,9 @@ const ExperienceTimeline = () => {
                   </div>
 
                   {exp.summary && (
-                    <p className="text-gray-300 mb-2">{exp.summary}</p>
+                    <p className="text-gray-300 mb-2">
+                      {highlightMetrics(exp.summary)}
+                    </p>
                   )}
 
                   {expandedId === (exp.id || `${exp.company}-${idx}`) && (
@@ -180,7 +195,7 @@ const ExperienceTimeline = () => {
                             {(exp.bullets || []).map((achievement, index) => (
                               <li key={index} className="flex items-start space-x-3 text-gray-300">
                                 <span className={`w-2 h-2 ${colors.iconBg} rounded-full mt-2 flex-shrink-0`}></span>
-                                <span className="leading-relaxed">{achievement}</span>
+                                <span className="leading-relaxed">{highlightMetrics(achievement)}</span>
                               </li>
                             ))}
                           </ul>
