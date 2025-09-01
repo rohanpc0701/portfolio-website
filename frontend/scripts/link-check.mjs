@@ -12,7 +12,7 @@ const links = [
   'https://rohan-chavan.vercel.app/',
   'https://github.com/RohanChavan0701',
   'https://www.linkedin.com/in/rohan-chavan-708532200/',
-  'https://rohan-chavan.vercel.app/resume.pdf'
+  'https://rohan-chavan.vercel.app/images/projects/Rohan_Chavan_Resume.pdf'
 ];
 
 function checkLink(url) {

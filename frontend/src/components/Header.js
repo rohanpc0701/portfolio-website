@@ -64,7 +64,7 @@ const Header = () => {
               Contact
             </button>
             <a
-              href="/resume.pdf"
+              href="/images/projects/Rohan_Chavan_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-blue-400 transition-colors duration-200 font-medium"
@@ -143,7 +143,7 @@ const Header = () => {
                 Contact
               </button>
                 <a 
-                  href="/resume.pdf"
+                  href="/images/projects/Rohan_Chavan_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-blue-400 transition-colors duration-200 font-medium text-left px-4"
