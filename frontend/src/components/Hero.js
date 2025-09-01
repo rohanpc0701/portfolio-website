@@ -82,13 +82,13 @@ const Hero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="lg:text-left">
               {/* Main Heading */}
-              <h1 className="text-5xl lg:text-7xl font-bold mb-4 lg:mb-6 bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 lg:mb-5 bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent leading-snug tracking-tight">
                 Hi, I'm <span className="text-blue-400">{personalInfo?.name || 'Rohan'}</span>
               </h1>
 
               {/* Dynamic Subtitle */}
-              <div className="h-16 lg:h-20 flex items-center justify-center lg:justify-start mb-6 lg:mb-8">
-                <h2 className="text-2xl lg:text-4xl font-semibold text-gray-300">
+              <div className="h-12 lg:h-16 flex items-center justify-center lg:justify-start mb-5 lg:mb-7">
+                <h2 className="text-xl lg:text-3xl font-semibold text-gray-300">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-500">
                     {dynamicTexts[currentText]}
                   </span>
@@ -105,12 +105,12 @@ const Hero = () => {
               </div>
 
               {/* Description */}
-              <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto lg:mx-0 mb-8 lg:mb-12 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-400 max-w-3xl mx-auto lg:mx-0 mb-7 lg:mb-10 leading-relaxed">
                 {personalInfo?.bio || "MS Computer Engineering student at Virginia Tech specializing in AI/ML, with hands-on experience in building production-grade systems, LLM applications, and cutting-edge research in artificial intelligence."}
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12 lg:mb-16">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-10 lg:mb-12">
                 <button 
                   onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
                   className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-full 
