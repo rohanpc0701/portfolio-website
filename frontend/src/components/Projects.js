@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, ExternalLink, Calendar, Star, ArrowRight } from 'lucide-react';
+import { Github, ExternalLink, Calendar, Star, ArrowRight, Play } from 'lucide-react';
 import { portfolioAPI } from '../services/api';
 import { firebaseReady } from '../services/firebase';
 import { resolveThumbnailForRepo } from '../config/projectThumbnails';
@@ -383,6 +383,17 @@ const Projects = () => {
               >
                 <ExternalLink className="w-4 h-4" />
                 <span>Live Demo</span>
+              </a>
+            )}
+            {project.video && (
+              <a 
+                href={project.video}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 px-4 py-2 bg-red-500/20 hover:bg-red-500/30 text-red-300 rounded-lg transition-colors"
+              >
+                <Play className="w-4 h-4" />
+                <span>Video Demo</span>
               </a>
             )}
           </div>

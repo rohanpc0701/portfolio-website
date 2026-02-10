@@ -97,6 +97,7 @@ PROJECTS_DATA = [
         "featured": True,
         "github": "https://github.com/RohanChavan0701/period_cycle_planner",
         "demo": "https://lunaflow.work",
+        "video": "https://youtu.be/91-5FK8gVN8",
         "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
         "status": "completed",
         "highlights": [
