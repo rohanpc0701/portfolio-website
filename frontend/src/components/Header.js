@@ -84,7 +84,7 @@ const Header = () => {
               <Github size={20} />
             </a>
             <a
-              href="https://www.linkedin.com/in/rohan-chavan-708532200/"
+              href="https://www.linkedin.com/in/rohanpraveenchavan"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-blue-400 transition-colors duration-200"
@@ -164,7 +164,7 @@ const Header = () => {
                   <Github size={20} aria-hidden="true" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/rohan-chavan-708532200/"
+                  href="https://www.linkedin.com/in/rohanpraveenchavan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-blue-400 transition-colors duration-200"

@@ -75,7 +75,7 @@ const Contact = () => {
     },
     {
       icon: Linkedin,
-      href: 'https://www.linkedin.com/in/rohan-chavan-708532200/',
+      href: 'https://www.linkedin.com/in/rohanpraveenchavan',
       label: 'LinkedIn',
       color: 'hover:text-blue-400'
     },
@@ -298,7 +298,7 @@ const Contact = () => {
                 <span>Email Me</span>
               </a>
               <a
-                href="https://www.linkedin.com/in/rohan-chavan-708532200/"
+                href="https://www.linkedin.com/in/rohanpraveenchavan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 px-6 py-3 border-2 border-gray-600 text-gray-300 font-medium rounded-full hover:border-blue-400 hover:text-blue-400 transform hover:scale-105 transition-all duration-300"

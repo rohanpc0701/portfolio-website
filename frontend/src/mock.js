@@ -5,10 +5,10 @@ export const portfolioData = {
     name: "Rohan",
     title: "AI/ML Engineer & Full-Stack Developer",
     email: "rohanchavan0701@gmail.com",
-    github: "https://github.com/rohan",
-    linkedin: "https://www.linkedin.com/in/rohan-chavan-708532200/",
+    github: "https://github.com/RohanChavan0701",
+    linkedin: "https://www.linkedin.com/in/rohanpraveenchavan",
     location: "Blacksburg, VA",
-    bio: "MS Computer Engineering student at Virginia Tech specializing in AI/ML, with hands-on experience in building production-grade systems, LLM applications, and cutting-edge research in artificial intelligence."
+    bio: "AI/ML Engineer building production systems with LLMs, multi-agent orchestration, and full-stack development. Experienced in building and deploying intelligent systems from hackathon to production. Currently pursuing MS Computer Engineering at Virginia Tech."
   },
 
   education: [
@@ -18,7 +18,7 @@ export const portfolioData = {
       institution: "Virginia Polytechnic Institute and State University",
       location: "Blacksburg, VA, USA",
       period: "Aug 2024 – May 2026",
-      gpa: "3.68/4.0",
+      gpa: "3.71/4.0",
       type: "masters"
     },
     {
@@ -35,112 +35,43 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "SentiMint – AI Stock Analyzer",
-      description: "LangChain-powered multi-agent system simulating investor personas that analyze Yahoo Finance indicators and debate stock recommendations using GPT-based reasoning.",
-      longDescription: "Built a sophisticated LangChain-powered multi-agent system that simulates different investor personas ('bold' and 'cautious') to analyze Yahoo Finance indicators and debate stock recommendations. The system uses GPT-based reasoning modules and symbolic heuristics to weigh financial risks, enabling decision reconciliation via token-wise confidence scoring.",
-      tech: ["LangChain", "GPT-3.5", "Selenium", "Next.js", "Flask", "Yahoo Finance API", "BeautifulSoup"],
-      category: "AI/ML",
+      title: "LunaFlow — Cycle-Aware Planning Platform",
+      description: "Context-aware planning system with 4 integrated views (calendar, Kanban board, brainstorm, vision board). Built in 24 hours with bidirectional Google Calendar/Tasks sync. Multi-service architecture with React, Node.js, and Python/FastAPI AI service.",
+      longDescription: "Context-aware planning system with 4 integrated views (calendar, Kanban board, brainstorm, vision board). Built and deployed in 24 hours at HackViolet 2026 with bidirectional Google Calendar/Tasks sync. Multi-service architecture with React frontend, Node.js backend, and Python/FastAPI AI service. Features voice-to-text input with ElevenLabs and AI task extraction with Google Gemini.",
+      tech: ["React", "Node.js", "Python/FastAPI", "Docker", "Google Gemini", "ElevenLabs", "OAuth 2.0"],
+      category: "Full-Stack",
       featured: true,
-      github: "https://github.com/rohan/sentimint",
-      demo: "https://sentimint.demo.com",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop",
+      github: "https://github.com/RohanChavan0701/period_cycle_planner",
+      demo: "https://lunaflow.work",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
       status: "completed",
       highlights: [
-        "Multi-agent system with persona-based decision making",
-        "Real-time financial data analysis and processing", 
-        "Advanced GPT-based reasoning and confidence scoring",
-        "Framework adaptable to reinforcement learning environments"
+        "Built and deployed in 24 hours at HackViolet 2026",
+        "4 integrated planning views (calendar, Kanban, brainstorm, vision board)",
+        "Bidirectional Google Calendar/Tasks sync via OAuth 2.0",
+        "Voice-to-text input with ElevenLabs",
+        "AI task extraction with Google Gemini",
+        "Production deployment with CI/CD"
       ]
     },
     {
       id: 2,
-      title: "LLM Defender Bot",
-      description: "Real-time AI safety system using GPT-4 and Claude for detecting and neutralizing adversarial prompts in Amazon Bedrock models.",
-      longDescription: "Developed and deployed a real-time LLM Defender Bot as part of the Amazon Nova AI Challenge, achieving 56s average response latency for detecting and neutralizing adversarial prompts. The system implements advanced red teaming techniques and adversarial severity classification.",
-      tech: ["Amazon Bedrock", "GPT-4", "Claude", "DeepSeek", "Python", "AI Safety", "Red Teaming"],
-      category: "AI Safety",
-      featured: true,
-      github: "https://github.com/rohan/llm-defender",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
-      status: "in-progress",
-      highlights: [
-        "56s average response latency for threat detection",
-        "Advanced prompt-based attack taxonomy design",
-        "Real-time adversarial prompt neutralization",
-        "Contribution to LLM alignment and safety protocols"
-      ]
-    },
-    {
-      id: 3,
-      title: "TypeSpec API Generator",
-              description: "Production-grade TypeSpec models and evaluation pipeline using Google Cloud (Vertex AI + Gemini) for automated schema generation and validation.",
-              longDescription: "Spearheaded the design of 25+ production-grade TypeSpec models for CDK Repair APIs at AutoUnify, reducing schema duplication by 40%. Built an evaluation pipeline on Google Cloud (Vertex AI + Gemini) for automated schema generation from unstructured input.",
-      tech: ["TypeSpec", "Vertex AI", "Gemini", "OpenAPI", "Google Cloud", "REST APIs", "CI/CD"],
-      category: "DevOps/API",
-      featured: true,
-      github: "https://github.com/rohan/typespec-generator",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop",
-      status: "completed",
-      highlights: [
-        "40% reduction in schema duplication",
-        "Automated TypeSpec schema generation",
-        "Production-grade API type safety improvements",
-        "Org-wide adoption of documentation workflow"
-      ]
-    },
-    {
-      id: 4,
-      title: "NLP Chatbot Suite",
-      description: "Three production NLP-enabled chatbots for process automation, reducing manual queries by 70% using ChatGPT API and custom intent recognition.",
-      longDescription: "Designed and deployed three NLP-enabled chatbots at Colgate-Palmolive that automated FAQ handling for O2I and S2P processes. Integrated ChatGPT-based REST API with custom intent recognition using machine learning algorithms, achieving sub-10s response latency.",
-      tech: ["Python", "NLP", "ChatGPT API", "BERT", "React.js", "PyTorch", "TensorFlow", "Logistic Regression"],
-      category: "NLP",
-      featured: false,
-      github: "https://github.com/rohan/nlp-chatbots",
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=400&fit=crop",
-      status: "completed",
-      highlights: [
-        "70% reduction in manual query handling",
-        "Sub-10s average response latency",
-        "Full-stack chatbot development",
-        "Custom intent recognition system"
-      ]
-    },
-    {
-      id: 5,
-      title: "Computer Vision Pipeline",
-      description: "Advanced computer vision system using CLIP, DINOv2, and Vision-Language-Action systems for robotics applications.",
-      longDescription: "Built a comprehensive computer vision pipeline leveraging state-of-the-art models including CLIP and DINOv2 for robotics applications. The system incorporates Vision-Language-Action frameworks and simulation environments for real-world deployment.",
-      tech: ["OpenCV", "CLIP", "DINOv2", "PyBullet", "OpenAI Gym", "Isaac Gym", "Python", "Computer Vision"],
-      category: "Computer Vision",
-      featured: false,
-      github: "https://github.com/rohan/cv-pipeline",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop",
-      status: "completed",
-      highlights: [
-        "State-of-the-art vision model integration",
-        "Robotics simulation environment setup",
-        "Vision-Language-Action system implementation",
-        "Real-world deployment optimization"
-      ]
-    },
-    {
-      id: 6,
-      title: "CANI – AI Blogging Platform",
-      description: "Web platform to explore and share AI-related content with secure auth, category-based posts, admin dashboard, and modern UI/UX.",
-      longDescription: "CANI is a full-stack blogging platform focused on AI content. It provides user authentication, category-wise browsing, and an admin dashboard for managing posts and categories. The UI is responsive and modern, using Owl Carousel for featured content, Font Awesome for icons, and AOS for smooth animations. The backend is powered by PHP and MySQL with session-based auth, and integrates OpenAI API for AI features.",
-      tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Owl Carousel", "Font Awesome", "AOS", "OpenAI API"],
+      title: "CareRoute — Multi-Agent Medical Tourism Orchestrator",
+      description: "Multi-agent orchestration system coordinating 6 specialized agents (flight monitoring, voice calls, notifications, hotel, hospital, accessibility) via JSON-RPC 2.0 protocol. Built in 36 hours at Codefest 2025.",
+      longDescription: "Multi-agent orchestration system coordinating 6 specialized agents (flight monitoring, voice calls, notifications, hotel, hospital, accessibility) via JSON-RPC 2.0 protocol. Built in 36 hours at Codefest 2025 (Marriott). Won 4th Place + Honorable Mention. Features HIPAA-compliant audit logging, automated workflow triggering, and retry logic with exponential backoff. Deployed on AWS EC2 with PostgreSQL.",
+      tech: ["FastAPI", "PostgreSQL", "A2A SDK", "Docker", "AWS EC2", "Flutter", "APScheduler"],
       category: "AI/ML",
       featured: true,
-      github: "https://github.com/RohanChavan0701/CANI-AI-Blogging-Website",
-      image: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=800&h=400&fit=crop",
+      github: "https://github.com/RohanChavan0701/CareRoute",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=400&fit=crop",
       status: "completed",
       highlights: [
-        "Secure login and registration",
-        "Category-based blog posts and featured carousels",
-        "Admin panel for content management",
-        "Responsive UI with Owl Carousel and AOS animations",
-        "OpenAI API integration for AI features"
+        "4th Place + Honorable Mention at Codefest 2025",
+        "6 specialized agents with JSON-RPC 2.0 communication",
+        "Successfully processed 12 end-to-end test bookings",
+        "HIPAA-compliant audit logging",
+        "Deployed on AWS EC2 with PostgreSQL",
+        "Automated workflow triggering and retry logic"
       ]
     }
   ],
@@ -148,92 +79,66 @@ export const portfolioData = {
   skills: {
     languages: [
       { name: "Python", level: 95, category: "programming" },
-      { name: "JavaScript", level: 90, category: "programming" },
-      { name: "Java", level: 85, category: "programming" },
-      { name: "SQL", level: 80, category: "database" },
-      { name: "HTML/CSS", level: 85, category: "web" },
-      { name: "Node.js", level: 80, category: "backend" }
+      { name: "TypeScript", level: 88, category: "programming" },
+      { name: "SQL", level: 85, category: "database" },
+      { name: "C++", level: 80, category: "programming" }
     ],
     frameworks: [
-      { name: "React.js", level: 90, category: "frontend" },
-      { name: "Django", level: 85, category: "backend" },
-      { name: "FastAPI", level: 80, category: "backend" },
-      { name: "PyTorch", level: 90, category: "ai-ml" },
-      { name: "TensorFlow", level: 85, category: "ai-ml" },
-      { name: "LangChain", level: 85, category: "ai-ml" },
-      { name: "OpenCV", level: 80, category: "cv" },
-      { name: "HuggingFace", level: 85, category: "ai-ml" }
+      { name: "FastAPI", level: 90, category: "backend" },
+      { name: "Node.js", level: 85, category: "backend" },
+      { name: "React", level: 88, category: "frontend" },
+      { name: "REST APIs", level: 90, category: "backend" },
+      { name: "Microservices", level: 85, category: "backend" }
     ],
     tools: [
-      { name: "Git/GitHub", level: 95, category: "development" },
-      { name: "Docker", level: 80, category: "devops" },
-      { name: "Kubernetes", level: 75, category: "devops" },
-      { name: "AWS", level: 85, category: "cloud" },
-      { name: "GCP", level: 80, category: "cloud" },
-      { name: "Terraform", level: 70, category: "devops" },
-      { name: "MongoDB", level: 80, category: "database" },
-      { name: "PostgreSQL", level: 85, category: "database" }
+      { name: "AWS (EC2, Lambda, S3)", level: 85, category: "cloud" },
+      { name: "Docker", level: 85, category: "devops" },
+      { name: "PostgreSQL", level: 85, category: "database" },
+      { name: "Redis", level: 80, category: "database" },
+      { name: "Cursor", level: 90, category: "development" },
+      { name: "GitHub Actions", level: 85, category: "devops" },
+      { name: "Pytest", level: 85, category: "testing" }
     ],
     aiMl: [
-      { name: "Machine Learning", level: 90, category: "core" },
-      { name: "Deep Learning", level: 85, category: "core" },
-      { name: "Natural Language Processing", level: 90, category: "domain" },
-      { name: "Computer Vision", level: 85, category: "domain" },
-      { name: "Large Language Models", level: 95, category: "specialized" },
-      { name: "Reinforcement Learning", level: 75, category: "specialized" },
-      { name: "MLOps", level: 80, category: "engineering" },
-      { name: "Model Evaluation", level: 85, category: "engineering" }
+      { name: "PyTorch", level: 90, category: "core" },
+      { name: "OpenAI/Claude APIs", level: 95, category: "specialized" },
+      { name: "RAG Pipelines", level: 88, category: "specialized" },
+      { name: "Prompt Engineering", level: 95, category: "specialized" },
+      { name: "LangChain", level: 85, category: "specialized" },
+      { name: "Multi-Agent Systems", level: 88, category: "specialized" }
     ]
   },
 
-  testimonials: [
-    {
-      id: 1,
-      name: "Dr. Sarah Chen",
-      role: "Research Supervisor",
-      company: "Virginia Tech",
-      content: "Rohan's work on adversarial AI and LLM safety has been exceptional. His ability to combine theoretical understanding with practical implementation is remarkable.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b9c3?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      id: 2,
-      name: "Michael Rodriguez",
-      role: "Tech Lead",
-      company: "AutoUnify",
-      content: "Rohan's contributions to our TypeSpec API pipeline were game-changing. His attention to detail and system design skills significantly improved our development workflow.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      id: 3,
-      name: "Priya Sharma",
-      role: "AI Engineering Manager",
-      company: "Colgate-Palmolive",
-      content: "The NLP chatbots Rohan developed transformed our customer service operations. His technical expertise and problem-solving approach are outstanding.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-    }
-  ],
+  testimonials: [],
 
   achievements: [
     {
       id: 1,
-      title: "Amazon Nova AI Challenge Participant",
-      description: "Leading red teaming initiatives for LLM safety evaluation",
+      title: "Amazon Nova Trusted AI Competition — 1st Place (Tournament 2)",
+      description: "Won 1st place in Tournament 2 of the Amazon Nova Trusted AI Competition, achieving a 46% jailbreak reduction in LLM safety evaluation",
       year: "2025",
       category: "competition"
     },
     {
       id: 2,
-      title: "Production API Schema Optimization",
-      description: "Reduced schema duplication by 40% in enterprise systems",
-      year: "2025", 
-      category: "achievement"
+      title: "Amazon Nova Trusted AI Competition — 2nd Place (Tournament 1)",
+      description: "Won 2nd place in Tournament 1 of the Amazon Nova Trusted AI Competition with advanced red teaming techniques",
+      year: "2025",
+      category: "competition"
     },
     {
       id: 3,
-      title: "NLP Automation Success",
-      description: "Achieved 70% reduction in manual query handling",
-      year: "2024",
-      category: "achievement"
+      title: "Codefest 2025 (Marriott) — 4th Place + Honorable Mention",
+      description: "Built CareRoute, a multi-agent medical tourism orchestrator, in 36 hours. Coordinated 6 specialized agents via JSON-RPC 2.0",
+      year: "2025",
+      category: "competition"
+    },
+    {
+      id: 4,
+      title: "HackViolet 2026 — LunaFlow",
+      description: "Built and deployed LunaFlow, a cycle-aware planning platform with 4 integrated views, in 24 hours",
+      year: "2026",
+      category: "competition"
     }
   ]
 };

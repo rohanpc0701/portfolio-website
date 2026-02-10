@@ -8,14 +8,15 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [personalInfo, setPersonalInfo] = useState({
     name: 'Rohan',
-    bio: 'MS Computer Engineering student at Virginia Tech specializing in AI/ML, with hands-on experience in building production-grade systems, LLM applications, and cutting-edge research in artificial intelligence.'
+    bio: 'AI/ML Engineer building production systems with LLMs, multi-agent orchestration, and full-stack development. Experienced in building and deploying intelligent systems from hackathon to production. Currently pursuing MS Computer Engineering at Virginia Tech.'
   });
   const [loading, setLoading] = useState(false);
 
   const dynamicTexts = [
-    "Engineer · Innovator · AI Safety Advocate",
     "AI/ML Engineer",
-    "Full-Stack Developer" 
+    "Full-Stack Developer", 
+    "Research Enthusiast",
+    "Problem Solver"
   ];
 
   useEffect(() => {
@@ -82,35 +83,26 @@ const Hero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="lg:text-left">
               {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 lg:mb-5 bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent leading-snug tracking-tight">
+              <h1 className="text-5xl lg:text-7xl font-bold mb-4 lg:mb-6 bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent leading-tight">
                 Hi, I'm <span className="text-blue-400">{personalInfo?.name || 'Rohan'}</span>
               </h1>
 
               {/* Dynamic Subtitle */}
-              <div className="h-12 lg:h-16 flex items-center justify-center lg:justify-start mb-5 lg:mb-7">
-                <h2 className="text-xl lg:text-3xl font-semibold text-gray-300">
+              <div className="h-16 lg:h-20 flex items-center justify-center lg:justify-start mb-6 lg:mb-8">
+                <h2 className="text-2xl lg:text-4xl font-semibold text-gray-300">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-500">
                     {dynamicTexts[currentText]}
                   </span>
                 </h2>
               </div>
 
-              {/* Quick facts badges */}
-              <div className="flex flex-wrap gap-2 justify-center lg:justify-start mb-4">
-                {['3+ internships', 'AI/ML', 'Cloud-Native', 'LLM Safety'].map((b) => (
-                  <span key={b} className="px-3 py-1 rounded-full text-sm bg-white/10 text-gray-300 border border-gray-700">
-                    {b}
-                  </span>
-                ))}
-              </div>
-
               {/* Description */}
-              <p className="text-base lg:text-lg text-gray-400 max-w-3xl mx-auto lg:mx-0 mb-7 lg:mb-10 leading-relaxed">
-                {personalInfo?.bio || "MS Computer Engineering student at Virginia Tech specializing in AI/ML, with hands-on experience in building production-grade systems, LLM applications, and cutting-edge research in artificial intelligence."}
+              <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto lg:mx-0 mb-8 lg:mb-12 leading-relaxed">
+                {personalInfo?.bio || "AI/ML Engineer building production systems with LLMs, multi-agent orchestration, and full-stack development. Experienced in building and deploying intelligent systems from hackathon to production. Currently pursuing MS Computer Engineering at Virginia Tech."}
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-10 lg:mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12 lg:mb-16">
                 <button 
                   onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
                   className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-full 
@@ -120,23 +112,15 @@ const Hero = () => {
                   View My Work
                 </button>
                 <a 
-                  href="/images/projects/Rohan_Chavan_Resume.pdf"
+                  href="/Rohan_Resume_Latex.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-medium rounded-full 
                            hover:border-blue-400 hover:text-blue-400 transform hover:scale-105 transition-all duration-300 
-                           backdrop-blur-sm min-w-[200px] text-center whitespace-nowrap"
+                           backdrop-blur-sm min-w-[200px] text-center"
                 >
                   Download Resume
                 </a>
-                <button 
-                  onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                  className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-medium rounded-full 
-                           hover:border-blue-400 hover:text-blue-400 transform hover:scale-105 transition-all duration-300 
-                           backdrop-blur-sm min-w-[200px] text-center whitespace-nowrap"
-                >
-                  Contact Me
-                </button>
               </div>
             </div>
 
@@ -144,30 +128,32 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-end">
               <img
                 src={profileImg}
-                alt="Headshot of Rohan Praveen Chavan, AI/ML Engineer"
+                alt="Rohan headshot"
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
-                width="288"
-                height="288"
                 className="w-40 h-40 md:w-72 md:h-72 rounded-full object-cover border border-white/10 shadow-xl ring-2 ring-blue-500/20"
               />
             </div>
           </div>
 
           {/* Experience Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 max-w-5xl mx-auto">
             <div className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-blue-500/50 transition-all duration-300">
-              <div className="text-3xl font-bold text-blue-400 mb-2">3+</div>
-              <div className="text-gray-300">Years Experience</div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">2</div>
+              <div className="text-gray-300">Major Projects</div>
             </div>
             <div className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-purple-500/50 transition-all duration-300">
-              <div className="text-3xl font-bold text-purple-400 mb-2">5+</div>
-              <div className="text-gray-300">AI/ML Projects</div>
+              <div className="text-3xl font-bold text-purple-400 mb-2">3</div>
+              <div className="text-gray-300">Competition Wins</div>
             </div>
             <div className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-cyan-500/50 transition-all duration-300">
-              <div className="text-3xl font-bold text-cyan-400 mb-2">2+</div>
-              <div className="text-gray-300">Tech Internships</div>
+              <div className="text-3xl font-bold text-cyan-400 mb-2">24-36h</div>
+              <div className="text-gray-300">Hackathon Speed</div>
+            </div>
+            <div className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-green-500/50 transition-all duration-300">
+              <div className="text-3xl font-bold text-green-400 mb-2">15+</div>
+              <div className="text-gray-300">Technologies</div>
             </div>
           </div>
         </div>

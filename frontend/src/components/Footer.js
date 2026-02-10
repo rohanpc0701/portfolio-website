@@ -25,7 +25,7 @@ const Footer = () => {
     },
     {
       name: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/rohan-chavan-708532200/',
+      href: 'https://www.linkedin.com/in/rohanpraveenchavan',
       icon: Linkedin,
       color: 'hover:text-blue-400'
     },

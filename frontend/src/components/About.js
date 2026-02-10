@@ -5,7 +5,7 @@ import { portfolioAPI } from '../services/api';
 const About = () => {
   const [personalInfo, setPersonalInfo] = useState({
     name: "Rohan Praveen Chavan",
-    bio: "MS Computer Engineering student at Virginia Tech specializing in AI/ML, with hands-on experience in building production-grade systems, LLM applications, and cutting-edge research in artificial intelligence."
+    bio: "AI/ML Engineer building production systems with LLMs, multi-agent orchestration, and full-stack development. Experienced in building and deploying intelligent systems from hackathon to production. Currently pursuing MS Computer Engineering at Virginia Tech."
   });
   const [education, setEducation] = useState([
     {
@@ -14,7 +14,7 @@ const About = () => {
       institution: "Virginia Polytechnic Institute and State University",
       location: "Blacksburg, VA, USA",
       period: "Aug 2024 – May 2026",
-      gpa: "3.68/4.0",
+      gpa: "3.71/4.0",
       type: "masters"
     },
     {
@@ -62,31 +62,32 @@ const About = () => {
           {/* Left Column - Text Content */}
           <div className="space-y-6">
             <p className="text-lg text-gray-300 leading-relaxed">
-              I'm a passionate AI/ML Engineer and Computer Engineering graduate student at Virginia Tech, 
-              with a strong foundation in artificial intelligence, machine learning, and full-stack development. 
-              My journey in technology spans across cutting-edge research, industry internships, and innovative projects.
-            </p>
-            
-            <p className="text-lg text-gray-300 leading-relaxed">
-              Currently pursuing my Master's in Computer Engineering while working on advanced AI systems, 
-              including LLM evaluation pipelines, adversarial AI research, and production-grade machine learning applications. 
-              I thrive on solving complex problems and building systems that make a real impact.
+              AI/ML Engineer building production systems with LLMs, multi-agent orchestration, and full-stack development.
+              Experienced in building and deploying intelligent systems from hackathon to production.
+              Currently pursuing MS Computer Engineering at Virginia Tech.
             </p>
 
             <p className="text-lg text-gray-300 leading-relaxed">
-              When I'm not coding, you'll find me exploring the latest research papers, contributing to open-source projects, 
-              or experimenting with new AI frameworks and technologies.
+              I've won competitions building real products under pressure — 1st and 2nd place in the Amazon Nova
+              Trusted AI Competition, 4th place at Codefest 2025 with CareRoute, and built LunaFlow in 24 hours
+              at HackViolet 2026. My internships at AutoUnify and Colgate-Palmolive focused on deploying AI systems
+              that delivered measurable impact.
+            </p>
+
+            <p className="text-lg text-gray-300 leading-relaxed">
+              I specialize in multi-agent systems, LLM integration, and building full-stack applications
+              that go from prototype to production quickly.
             </p>
 
             {/* Key Stats */}
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="p-4 bg-white/5 rounded-xl border border-gray-800">
                 <h4 className="text-blue-400 font-semibold mb-2">Focus Areas</h4>
-                <p className="text-gray-300 text-sm">AI/ML, LLMs, Computer Vision, NLP</p>
+                <p className="text-gray-300 text-sm">LLMs, Multi-Agent Systems, Full-Stack, AI Safety</p>
               </div>
               <div className="p-4 bg-white/5 rounded-xl border border-gray-800">
                 <h4 className="text-purple-400 font-semibold mb-2">Interests</h4>
-                <p className="text-gray-300 text-sm">Generative AI, Robotics, Research</p>
+                <p className="text-gray-300 text-sm">Generative AI, Agent Orchestration, Production Systems</p>
               </div>
             </div>
           </div>

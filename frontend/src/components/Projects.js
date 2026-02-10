@@ -76,10 +76,8 @@ const Projects = () => {
   const categories = [
     { id: 'all', name: 'All Projects' },
     { id: 'AI/ML', name: 'AI/ML' },
-    { id: 'NLP', name: 'NLP' },
-    { id: 'AI Safety', name: 'AI Safety' },
-    { id: 'DevOps/API', name: 'DevOps' },
-    { id: 'Computer Vision', name: 'Computer Vision' }
+    { id: 'Full-Stack', name: 'Full-Stack' },
+    { id: 'DevOps/API', name: 'DevOps' }
   ];
 
   useEffect(() => {
@@ -109,15 +107,11 @@ const Projects = () => {
             const haystack = `${p.title} ${p.description} ${(p.tech || []).join(' ')}`.toLowerCase();
             switch (selectedCategory) {
               case 'AI/ML':
-                return /(\b|_)(ai|ml|machine|learning|pytorch|tensorflow|langchain|llm|python)(\b|_)/.test(haystack);
-              case 'NLP':
-                return /(\b|_)(nlp|language|bert|gpt|transformer|chatbot|text)(\b|_)/.test(haystack);
+                return /(\b|_)(ai|ml|machine|learning|pytorch|tensorflow|langchain|llm|python|agent)(\b|_)/.test(haystack);
+              case 'Full-Stack':
+                return /(\b|_)(react|node|fullstack|full.stack|frontend|backend|web|fastapi|flask|django)(\b|_)/.test(haystack);
               case 'DevOps/API':
-                return /(\b|_)(api|devops|docker|kubernetes|openapi|rest|typescript|node|express)(\b|_)/.test(haystack);
-              case 'Computer Vision':
-                return /(\b|_)(vision|cv|image|opencv|clip|dinov)(\b|_)/.test(haystack);
-              case 'AI Safety':
-                return /(\b|_)(safety|alignment|red\s*team|adversarial|defender)(\b|_)/.test(haystack);
+                return /(\b|_)(api|devops|docker|kubernetes|openapi|rest|typescript|express)(\b|_)/.test(haystack);
               default:
                 return true;
             }
@@ -182,6 +176,7 @@ const Projects = () => {
     if (has('vision') || has('cv')) return 'Computer Vision';
     if (has('devops') || has('api')) return 'DevOps/API';
     if (has('safety')) return 'AI Safety';
+    if (has('fullstack') || has('full-stack') || has('react') || has('web')) return 'Full-Stack';
     if (language.includes('python') || has('ml') || has('ai')) return 'AI/ML';
     return 'AI/ML';
   };
@@ -252,7 +247,8 @@ const Projects = () => {
   const getProjectColor = (category) => {
     const colorMap = {
       'AI/ML': 'blue',
-      'NLP': 'purple', 
+      'Full-Stack': 'purple',
+      'NLP': 'purple',
       'AI Safety': 'red',
       'DevOps/API': 'green',
       'Computer Vision': 'cyan'
