@@ -112,7 +112,7 @@ const Hero = () => {
                   View My Work
                 </button>
                 <a 
-                  href="/Rohan_Resume_Latex.pdf"
+                  href="/ResumeRohan_Chavan.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-medium rounded-full 

@@ -64,7 +64,7 @@ const Header = () => {
               Contact
             </button>
             <a
-              href="/images/projects/Rohan_Chavan_Resume.pdf"
+              href="/ResumeRohan_Chavan.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-blue-400 transition-colors duration-200 font-medium"
@@ -143,7 +143,7 @@ const Header = () => {
                 Contact
               </button>
                 <a 
-                  href="/images/projects/Rohan_Chavan_Resume.pdf"
+                  href="/ResumeRohan_Chavan.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-blue-400 transition-colors duration-200 font-medium text-left px-4"
@@ -151,35 +151,29 @@ const Header = () => {
                   Resume
                 </a>
               
-                            {/* Mobile Social Links */}
+              {/* Mobile Social Links */}
               <div className="flex items-center space-x-6 px-4 pt-4 border-t border-gray-800">
                 <a
                   href="https://github.com/RohanChavan0701"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-blue-400 transition-colors duration-200"
-                  aria-label="GitHub Profile"
-                  title="View GitHub Profile"
                 >
-                  <Github size={20} aria-hidden="true" />
+                  <Github size={20} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/rohanpraveenchavan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-blue-400 transition-colors duration-200"
-                  aria-label="LinkedIn Profile"
-                  title="View LinkedIn Profile"
                 >
-                  <Linkedin size={20} aria-hidden="true" />
+                  <Linkedin size={20} />
                 </a>
                 <a
-                  href="mailto:rohanchavan0701@gmail.com"
+                    href="mailto:rohanchavan0701@gmail.com"
                   className="text-white hover:text-blue-400 transition-colors duration-200"
-                  aria-label="Send Email"
-                  title="Send Email to rohanchavan0701@gmail.com"
                 >
-                  <Mail size={20} aria-hidden="true" />
+                  <Mail size={20} />
                 </a>
               </div>
               
