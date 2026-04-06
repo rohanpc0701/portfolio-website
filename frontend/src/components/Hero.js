@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { portfolioAPI } from '../services/api';
-import profileImg from '../PXL_20250111_214532171 (2)-min.jpg';
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [personalInfo, setPersonalInfo] = useState({
     name: 'Rohan',
     bio: 'AI/ML Engineer building production systems with LLMs, multi-agent orchestration, and full-stack development. Experienced in building and deploying intelligent systems from hackathon to production. Currently pursuing MS Computer Engineering at Virginia Tech.'
@@ -13,10 +12,9 @@ const Hero = () => {
   const [loading, setLoading] = useState(false);
 
   const dynamicTexts = [
+    "LLM & Agentic Systems Engineer",
     "AI/ML Engineer",
-    "Full-Stack Developer", 
-    "Research Enthusiast",
-    "Problem Solver"
+    "Research Enthusiast"
   ];
 
   useEffect(() => {
@@ -79,16 +77,16 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 lg:px-8 text-center pt-16 md:pt-24">
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          {/* Hero grid: text left, image right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="lg:text-left">
+          {/* Hero content centered */}
+          <div className="max-w-3xl mx-auto">
+            <div>
               {/* Main Heading */}
               <h1 className="text-5xl lg:text-7xl font-bold mb-4 lg:mb-6 bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent leading-tight">
                 Hi, I'm <span className="text-blue-400">{personalInfo?.name || 'Rohan'}</span>
               </h1>
 
               {/* Dynamic Subtitle */}
-              <div className="h-16 lg:h-20 flex items-center justify-center lg:justify-start mb-6 lg:mb-8">
+              <div className="h-16 lg:h-20 flex items-center justify-center mb-6 lg:mb-8">
                 <h2 className="text-2xl lg:text-4xl font-semibold text-gray-300">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-500">
                     {dynamicTexts[currentText]}
@@ -97,43 +95,31 @@ const Hero = () => {
               </div>
 
               {/* Description */}
-              <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto lg:mx-0 mb-8 lg:mb-12 leading-relaxed">
+              <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto mb-8 lg:mb-12 leading-relaxed">
                 {personalInfo?.bio || "AI/ML Engineer building production systems with LLMs, multi-agent orchestration, and full-stack development. Experienced in building and deploying intelligent systems from hackathon to production. Currently pursuing MS Computer Engineering at Virginia Tech."}
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12 lg:mb-16">
-                <button 
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 lg:mb-16">
+                <button
                   onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-full 
-                           hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 
+                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-full
+                           hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300
                            shadow-lg hover:shadow-blue-500/25 min-w-[200px]"
                 >
                   View My Work
                 </button>
-                <a 
+                <a
                   href="/ResumeRohan_Chavan.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-medium rounded-full 
-                           hover:border-blue-400 hover:text-blue-400 transform hover:scale-105 transition-all duration-300 
+                  className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-medium rounded-full
+                           hover:border-blue-400 hover:text-blue-400 transform hover:scale-105 transition-all duration-300
                            backdrop-blur-sm min-w-[200px] text-center"
                 >
                   Download Resume
                 </a>
               </div>
-            </div>
-
-            {/* Profile Image */}
-            <div className="flex justify-center lg:justify-end">
-              <img
-                src={profileImg}
-                alt="Rohan headshot"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-                className="w-40 h-40 md:w-72 md:h-72 rounded-full object-cover border border-white/10 shadow-xl ring-2 ring-blue-500/20"
-              />
             </div>
           </div>
 
@@ -141,15 +127,15 @@ const Hero = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 max-w-5xl mx-auto">
             <div className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-blue-500/50 transition-all duration-300">
               <div className="text-3xl font-bold text-blue-400 mb-2">2</div>
-              <div className="text-gray-300">Major Projects</div>
+              <div className="text-gray-300">Internships</div>
             </div>
             <div className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-purple-500/50 transition-all duration-300">
-              <div className="text-3xl font-bold text-purple-400 mb-2">3</div>
-              <div className="text-gray-300">Competition Wins</div>
+              <div className="text-3xl font-bold text-purple-400 mb-2">117K</div>
+              <div className="text-gray-300">Training Samples</div>
             </div>
             <div className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-cyan-500/50 transition-all duration-300">
-              <div className="text-3xl font-bold text-cyan-400 mb-2">24-36h</div>
-              <div className="text-gray-300">Hackathon Speed</div>
+              <div className="text-3xl font-bold text-cyan-400 mb-2">46%</div>
+              <div className="text-gray-300">Attack Reduction</div>
             </div>
             <div className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-green-500/50 transition-all duration-300">
               <div className="text-3xl font-bold text-green-400 mb-2">15+</div>

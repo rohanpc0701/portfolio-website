@@ -6,7 +6,7 @@
       "dates": "May 2025 – Aug 2025",
       "location": "San Francisco, CA (Remote/Hybrid)",
       "logo": "/logos/autounify.avif",
-      "summary": "Optimized and fine-tuned Vertex AI pipelines; boosted task accuracy 30%+, automated schema validation (−25+ hrs/wk), and sped up CI/CD velocity 20%.",
+      "summary": "Built production ML scoring microservice (FastAPI + PostgreSQL on Vertex AI) with real-time monitoring across multiple LLM endpoints. Automated pytest + JSON Schema validation pipeline, reducing manual QA by 25+ hrs/wk and cutting deployment bugs across an 8-person engineering team.",
       "bullets": [
         "Optimized LLMs on Vertex AI worker/QA pipelines, accuracy +30%+.",
         "Multi-model evaluation (100+ models, 500+ endpoints) → data-driven deployment.",

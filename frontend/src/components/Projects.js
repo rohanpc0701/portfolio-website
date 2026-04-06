@@ -39,6 +39,16 @@ const Projects = () => {
     'agentmodules',
     'rohanchavan0701',
     'portfolio',
+    // Hidden from featured view
+    'trustdrive',
+    'canaibloggingwebsite',
+    'canaiblogsites',
+    'liveoptions',
+    'liveoptionchain',
+    'liveoptionschain',
+    'liveoptionsproject',
+    'optionsstocks',
+    'suspiciousbaggagedetectionsystem',
   ]);
 
   useEffect(() => {
@@ -79,6 +89,27 @@ const Projects = () => {
     { id: 'Full-Stack', name: 'Full-Stack' },
     { id: 'DevOps/API', name: 'DevOps' }
   ];
+
+  const novaProject = {
+    id: 'nova-trusted-ai',
+    title: 'Amazon Nova Trusted AI — LLM Safety Eval',
+    description: 'Fine-tuned transformer LLMs using SFT and DPO on 117K synthetic training examples. Built an agentic evaluation pipeline for adversarial testing. Achieved 46% reduction in adversarial attack success rate, outperforming Claude-3.7 Sonnet and CodeLlama-70B. 1st place Tournament 2 among 10 global teams.',
+    long_description: 'Fine-tuned transformer LLMs using SFT and DPO on 117K synthetic training examples. Built an agentic evaluation pipeline for adversarial testing across vulnerability detection and malicious content filtering. Achieved 46% reduction in adversarial attack success rate, outperforming Claude-3.7 Sonnet and CodeLlama-70B. 1st place Tournament 2 among 10 global teams.',
+    tech: ['SFT', 'DPO', 'HuggingFace Transformers', 'PyTorch', 'AWS Bedrock', 'AI Safety', 'Python'],
+    category: 'AI/ML',
+    featured: true,
+    github: 'https://github.com/RohanChavan0701',
+    demo: null,
+    image: `https://opengraph.githubassets.com/1/RohanChavan0701/RohanChavan0701`,
+    status: 'completed',
+    highlights: [
+      'Fine-tuned transformer LLMs on 117K synthetic training examples using SFT and DPO',
+      '46% reduction in adversarial attack success rate',
+      'Outperformed Claude-3.7 Sonnet and CodeLlama-70B',
+      '1st place Tournament 2 among 10 global teams',
+    ],
+    order: 0,
+  };
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -122,7 +153,8 @@ const Projects = () => {
             const bStars = parseInt((b.highlights?.[0] || '').replace(/\D/g, '')) || 0;
             return bStars - aStars;
           });
-          setProjects(filtered);
+          const showNova = selectedCategory === 'all' || selectedCategory === 'AI/ML';
+          setProjects(showNova ? [novaProject, ...filtered] : filtered);
         } else {
           try {
             const data = await portfolioAPI.getProjects(selectedCategory);

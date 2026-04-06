@@ -22,7 +22,7 @@ const About = () => {
       degree: "B.Tech Information Technology",
       institution: "K.J. Somaiya College of Engineering",
       location: "Mumbai, India",
-      period: "Jan 2020 – Dec 2024",
+      period: "Aug 2020 – May 2024",
       gpa: "3.5/4.0",
       type: "bachelors"
     }
@@ -68,8 +68,8 @@ const About = () => {
             </p>
 
             <p className="text-lg text-gray-300 leading-relaxed">
-              I've won competitions building real products under pressure — 1st and 2nd place in the Amazon Nova
-              Trusted AI Competition, 4th place at Codefest 2025 with CareRoute, and built LunaFlow in 24 hours
+              I've won competitions building real products under pressure — 1st place (Tournament 2) and 2nd place (Tournament 1) in the Amazon Nova
+              Trusted AI Challenge, 4th place at Codefest 2025 with CareRoute, and built LunaFlow in 24 hours
               at HackViolet 2026. My internships at AutoUnify and Colgate-Palmolive focused on deploying AI systems
               that delivered measurable impact.
             </p>
@@ -151,9 +151,7 @@ const About = () => {
             <div className="p-6 bg-gradient-to-br from-cyan-900/20 to-cyan-800/10 rounded-xl border border-cyan-800/30">
               <h4 className="text-cyan-400 font-semibold mb-3">Beyond Code</h4>
               <p className="text-gray-300 text-sm leading-relaxed">
-                I believe in continuous learning and staying at the forefront of AI innovation. 
-                My goal is to contribute to the advancement of artificial intelligence while building 
-                practical solutions that solve real-world problems.
+                Currently building an LLM-powered housing policy recommender using Census ACS and HUD APIs at Virginia Tech. Previously explored adversarial robustness and AI safety in the Amazon Nova Trusted AI Challenge.
               </p>
             </div>
           </div>

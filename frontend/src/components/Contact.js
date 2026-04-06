@@ -286,8 +286,7 @@ const Contact = () => {
               Ready to Build Something Amazing?
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              I'm always excited about new challenges in AI/ML and full-stack development. 
-              Let's collaborate and create innovative solutions together.
+              Open to full-time AI/ML engineering roles starting June 2026. Based in the US on OPT.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
